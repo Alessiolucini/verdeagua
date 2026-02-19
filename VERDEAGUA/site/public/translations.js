@@ -35,7 +35,7 @@ const translations = {
     "badge.4.sub": { es: "Cobertura Completa", en: "Full Coverage", de: "Vollständige Abdeckung", fr: "Couverture complète", it: "Copertura completa" },
 
     // ── Services Section ──
-    "services.title": { es: "Nuestros Servicios Premium", en: "Our Premium Services", de: "Unsere Premium-Dienste", fr: "Nos services premium", it: "I nostri servizi Premium" },
+    "services.title": { es: "Nuestros Servicios", en: "Our Services", de: "Unsere Dienste", fr: "Nos services", it: "I nostri servizi" },
     "services.subtitle": {
         es: "Cuidamos cada detalle para que su hogar respire la esencia del Mediterráneo con la máxima elegancia y profesionalidad.",
         en: "We take care of every detail so your home breathes the essence of the Mediterranean with the utmost elegance and professionalism.",
