@@ -149,7 +149,7 @@ const pageTranslations = {
     "nav.cta": { es: "Solicitar Presupuesto", en: "Request Quote", de: "Angebot anfordern", fr: "Demander un Devis", it: "Richiedi Preventivo" },
     "footer.desc": { es: "Excelencia en servicios de propiedad de lujo. Especialistas en el mantenimiento de los jardines y villas más exclusivas de Mallorca.", en: "Excellence in luxury property services. Specialists in maintaining the most exclusive gardens and villas in Mallorca.", de: "Exzellenz in Luxus-Immobiliendienstleistungen. Spezialisten für die Pflege der exklusivsten Gärten und Villen auf Mallorca.", fr: "Excellence dans les services de propriétés de luxe. Spécialistes de l'entretien des jardins et villas les plus exclusifs de Majorque.", it: "Eccellenza nei servizi per proprietà di lusso. Specialisti nella manutenzione dei giardini e ville più esclusivi di Maiorca." },
     "footer.services": { es: "Servicios", en: "Services", de: "Dienste", fr: "Services", it: "Servizi" },
-    "footer.svc.1": { es: "Jardinería & Jardín", en: "Gardening & Garden", de: "Gartenpflege & Garten", fr: "Jardinage & Jardin", it: "Giardinaggio & Giardino" },
+    "footer.svc.1": { es: "Jardinería", en: "Gardening", de: "Gartenpflege", fr: "Jardinage", it: "Giardinaggio" },
     "footer.svc.2": { es: "Cuidado de Piscinas", en: "Pool Care", de: "Poolpflege", fr: "Entretien de Piscines", it: "Cura Piscine" },
     "footer.svc.3": { es: "Reformas y Albañilería", en: "Renovations & Masonry", de: "Renovierungen & Mauerwerk", fr: "Rénovations et Maçonnerie", it: "Ristrutturazioni e Muratura" },
     "footer.svc.4": { es: "Gestión de Propiedades", en: "Property Management", de: "Immobilienverwaltung", fr: "Gestion de Propriétés", it: "Gestione Proprietà" },

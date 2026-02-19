@@ -210,7 +210,7 @@ const translations = {
         it: "Eccellenza nei servizi per proprietà di lusso. Specialisti nella manutenzione dei giardini e delle ville più esclusive di Maiorca."
     },
     "footer.services": { es: "Servicios", en: "Services", de: "Dienste", fr: "Services", it: "Servizi" },
-    "footer.svc.1": { es: "Jardinería & Jardín", en: "Gardening & Garden", de: "Gartenpflege & Garten", fr: "Jardinage & Jardin", it: "Giardinaggio & Giardino" },
+    "footer.svc.1": { es: "Jardinería", en: "Gardening", de: "Gartenpflege", fr: "Jardinage", it: "Giardinaggio" },
     "footer.svc.2": { es: "Cuidado de Piscinas", en: "Pool Care", de: "Poolpflege", fr: "Entretien piscines", it: "Cura piscine" },
     "footer.svc.3": { es: "Reformas y Albañilería", en: "Renovations & Masonry", de: "Renovierungen & Mauerarbeit", fr: "Rénovations & Maçonnerie", it: "Ristrutturazioni & Muratura" },
     "footer.svc.4": { es: "Gestión de Propiedades", en: "Property Management", de: "Immobilienverwaltung", fr: "Gestion de propriétés", it: "Gestione proprietà" },
