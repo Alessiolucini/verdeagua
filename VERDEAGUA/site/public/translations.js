@@ -42,11 +42,11 @@ const translations = {
         it: "Trasformiamo la tua proprietà in un paradiso mediterraneo"
     },
     "hero.subtitle": {
-        es: "Servicios exclusivos de paisajismo y mantenimiento integral en Mallorca. Calidad premium para las propiedades más exigentes del archipiélago.",
-        en: "Exclusive landscaping and comprehensive maintenance services in Mallorca. Premium quality for the most demanding properties in the archipelago.",
-        de: "Exklusive Landschaftsgestaltung und umfassende Wartungsdienste auf Mallorca. Premium-Qualität für die anspruchsvollsten Immobilien des Archipels.",
-        fr: "Services exclusifs d'aménagement paysager et d'entretien intégral à Majorque. Qualité premium pour les propriétés les plus exigeantes de l'archipel.",
-        it: "Servizi esclusivi di paesaggismo e manutenzione integrale a Maiorca. Qualità premium per le proprietà più esigenti dell'arcipelago."
+        es: "Servicios exclusivos de paisajismo y mantenimiento integral en Mallorca. Calidad superior para las propiedades más exigentes del archipiélago.",
+        en: "Exclusive landscaping and comprehensive maintenance services in Mallorca. Superior quality for the most demanding properties in the archipelago.",
+        de: "Exklusive Landschaftsgestaltung und umfassende Wartungsdienste auf Mallorca. Höchste Qualität für die anspruchsvollsten Immobilien des Archipels.",
+        fr: "Services exclusifs d'aménagement paysager et d'entretien intégral à Majorque. Qualité supérieure pour les propriétés les plus exigeantes de l'archipel.",
+        it: "Servizi esclusivi di paesaggismo e manutenzione integrale a Maiorca. Qualità superiore per le proprietà più esigenti dell'arcipelago."
     },
     "hero.cta1": { es: "Solicitar Presupuesto", en: "Request a Quote", de: "Angebot anfordern", fr: "Demander un devis", it: "Richiedi un preventivo" },
     "hero.cta2": { es: "Ver Proyectos", en: "View Projects", de: "Projekte ansehen", fr: "Voir les projets", it: "Vedi i progetti" },
@@ -121,7 +121,7 @@ const translations = {
         fr: "Nous comprenons que votre propriété à Majorque est plus qu'une maison ; c'est un refuge. Notre équipe de professionnels hautement qualifiés garantit un service discret, efficace et d'une qualité inégalée.",
         it: "Capiamo che la tua proprietà a Maiorca è più di una casa; è un rifugio. Il nostro team di professionisti altamente qualificati garantisce un servizio discreto, efficiente e di qualità insuperabile."
     },
-    "why.1.title": { es: "Garantía Premium", en: "Premium Guarantee", de: "Premium-Garantie", fr: "Garantie premium", it: "Garanzia Premium" },
+    "why.1.title": { es: "Garantía de Calidad", en: "Quality Guarantee", de: "Qualitätsgarantie", fr: "Garantie de qualité", it: "Garanzia di Qualità" },
     "why.1.desc": { es: "Compromiso total con la calidad y los plazos acordados.", en: "Total commitment to quality and agreed deadlines.", de: "Totales Engagement für Qualität und vereinbarte Fristen.", fr: "Engagement total envers la qualité et les délais convenus.", it: "Impegno totale per la qualità e le scadenze concordate." },
     "why.2.title": { es: "24h Respuesta", en: "24h Response", de: "24h Antwort", fr: "Réponse 24h", it: "Risposta 24h" },
     "why.2.desc": { es: "Atención inmediata para cualquier incidencia técnica.", en: "Immediate attention for any technical incident.", de: "Sofortige Hilfe bei technischen Problemen.", fr: "Attention immédiate pour tout incident technique.", it: "Attenzione immediata per qualsiasi problema tecnico." },
