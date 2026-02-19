@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>VerdeAgua | Paisajismo &amp; Mantenimiento de Lujo en Mallorca</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#2d5016",
+            "background-light": "#faf8f5", // Warm Cream White
+            "background-dark": "#181f13",
+            "sandstone": "#f0ebe3",
+            "charcoal": "#1a1a1a",
+          },
+          fontFamily: {
+            "display": ["Inter", "sans-serif"],
+            "serif": ["Playfair Display", "serif"]
+          },
+          borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px" },
+        },
+      },
+    }
+  </script>
+  <style>
+    .serif-text {
+      font-family: 'Playfair Display', serif;
+    }
+
+    .glass-nav {
+      background: rgba(250, 248, 245, 0.8);
+      backdrop-filter: blur(12px);
+    }
+
+    .masonry-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      grid-auto-rows: 250px;
+      gap: 1rem;
+    }
+
+    .masonry-item-tall {
+      grid-row: span 2;
+    }
+
+    /* ── Mobile Menu ── */
+    .mobile-menu {
+      position: fixed;
+      inset: 0;
+      z-index: 60;
+      transform: translateX(100%);
+      transition: transform 0.3s ease;
+    }
+
+    .mobile-menu.open {
+      transform: translateX(0);
+    }
+
+    .mobile-menu-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 59;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .mobile-menu-overlay.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .hamburger-btn {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+    }
+
+    .hamburger-btn span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: #2d5016;
+      margin: 5px 0;
+      transition: all 0.3s ease;
+      border-radius: 2px;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 1023px) {
+      .hamburger-btn {
+        display: block;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .masonry-grid {
+        grid-template-columns: 1fr;
+        grid-auto-rows: 200px;
+      }
+
+      .masonry-item-tall {
+        grid-row: span 1;
+      }
+    }
+
+    @media (min-width: 768px) and (max-width: 1023px) {
+      .masonry-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 220px;
+      }
+    }
+  </style>
+</head>
+
+<body class="bg-background-light text-charcoal font-display selection:bg-primary/20">
+  <!-- Navigation -->
+  <nav class="fixed top-0 w-full z-50 border-b border-primary/5 glass-nav">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 flex items-center justify-between h-16 sm:h-20">
+      <!-- Logo (Left) -->
+      <a href="index.html" class="flex-shrink-0">
+        <img src="logo-nav.png" alt="VerdeAgua Logo" class="h-10 sm:h-16 w-auto transition-transform hover:scale-105">
+      </a>
+
+      <!-- Nav Links (Center) -->
+      <div class="hidden lg:flex items-center gap-10">
+        <a class="text-sm font-medium hover:text-primary transition-colors" href="#servicios"
+          data-i18n="nav.servicios">Servicios</a>
+        <a class="text-sm font-medium hover:text-primary transition-colors" href="presupuesto.html"
+          data-i18n="nav.presupuesto">Presupuesto</a>
+        <a class="text-sm font-medium hover:text-primary transition-colors" href="contacto.html"
+          data-i18n="nav.contacto">Contacto</a>
+      </div>
+
+      <!-- CTA + Language Selector (Right) -->
+      <div class="flex items-center gap-2 sm:gap-3">
+        <div class="hidden md:flex items-center gap-1 text-xs">
+          <button data-lang-btn="es" onclick="switchLanguage('es')"
+            class="w-8 h-6 rounded overflow-hidden opacity-60 hover:opacity-100 transition-opacity"
+            title="Español">🇪🇸</button>
+          <button data-lang-btn="en" onclick="switchLanguage('en')"
+            class="w-8 h-6 rounded overflow-hidden opacity-60 hover:opacity-100 transition-opacity"
+            title="English">🇬🇧</button>
+          <button data-lang-btn="de" onclick="switchLanguage('de')"
+            class="w-8 h-6 rounded overflow-hidden opacity-60 hover:opacity-100 transition-opacity"
+            title="Deutsch">🇩🇪</button>
+          <button data-lang-btn="fr" onclick="switchLanguage('fr')"
+            class="w-8 h-6 rounded overflow-hidden opacity-60 hover:opacity-100 transition-opacity"
+            title="Français">🇫🇷</button>
+          <button data-lang-btn="it" onclick="switchLanguage('it')"
+            class="w-8 h-6 rounded overflow-hidden opacity-60 hover:opacity-100 transition-opacity"
+            title="Italiano">🇮🇹</button>
+        </div>
+        <a href="presupuesto.html"
+          class="hidden sm:inline-block bg-primary text-white px-4 sm:px-6 py-2 sm:py-2.5 rounded-lg text-xs sm:text-sm font-bold tracking-wide hover:bg-primary/90 transition-all shadow-sm no-underline"
+          data-i18n="nav.cta">
+          Solicitar Presupuesto
+        </a>
+        <!-- Hamburger Button -->
+        <button class="hamburger-btn lg:hidden" onclick="toggleMobileMenu()" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu Overlay -->
+  <div id="mobileMenuOverlay" class="mobile-menu-overlay" onclick="toggleMobileMenu()"></div>
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="mobile-menu bg-background-light">
+    <div class="flex items-center justify-between p-6 border-b border-primary/10">
+      <img src="logo-nav.png" alt="VerdeAgua" class="h-10">
+      <button onclick="toggleMobileMenu()" class="text-charcoal p-2">
+        <span class="material-symbols-outlined text-2xl">close</span>
+      </button>
+    </div>
+    <div class="p-6 space-y-6">
+      <a href="#servicios" onclick="toggleMobileMenu()"
+        class="block text-lg font-semibold text-primary hover:text-primary/70 transition-colors"
+        data-i18n="nav.servicios">Servicios</a>
+      <a href="presupuesto.html"
+        class="block text-lg font-semibold text-primary hover:text-primary/70 transition-colors"
+        data-i18n="nav.presupuesto">Presupuesto</a>
+      <a href="contacto.html" onclick="toggleMobileMenu()"
+        class="block text-lg font-semibold text-primary hover:text-primary/70 transition-colors"
+        data-i18n="nav.contacto">Contacto</a>
+      <hr class="border-primary/10">
+      <div class="flex items-center gap-3">
+        <button data-lang-btn="es" onclick="switchLanguage('es')"
+          class="text-2xl opacity-60 hover:opacity-100 transition-opacity">🇪🇸</button>
+        <button data-lang-btn="en" onclick="switchLanguage('en')"
+          class="text-2xl opacity-60 hover:opacity-100 transition-opacity">🇬🇧</button>
+        <button data-lang-btn="de" onclick="switchLanguage('de')"
+          class="text-2xl opacity-60 hover:opacity-100 transition-opacity">🇩🇪</button>
+        <button data-lang-btn="fr" onclick="switchLanguage('fr')"
+          class="text-2xl opacity-60 hover:opacity-100 transition-opacity">🇫🇷</button>
+        <button data-lang-btn="it" onclick="switchLanguage('it')"
+          class="text-2xl opacity-60 hover:opacity-100 transition-opacity">🇮🇹</button>
+      </div>
+      <a href="presupuesto.html"
+        class="block w-full text-center bg-primary text-white px-6 py-3 rounded-lg font-bold hover:bg-primary/90 transition-all no-underline"
+        data-i18n="nav.cta">Solicitar Presupuesto</a>
+    </div>
+  </div>
+
+  <script>
+    function toggleMobileMenu() {
+      document.getElementById('mobileMenu').classList.toggle('open');
+      document.getElementById('mobileMenuOverlay').classList.toggle('open');
+      document.body.style.overflow = document.getElementById('mobileMenu').classList.contains('open') ? 'hidden' : '';
+    }
+  </script>
+
+  <!-- Services Section -->
+  <section class="pt-28 sm:pt-32 pb-12 sm:pb-24 bg-background-light" id="servicios">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
+      <div class="text-center mb-10 sm:mb-20">
+        <h2 class="serif-text text-primary text-3xl sm:text-4xl lg:text-5xl font-bold mb-4" data-i18n="services.title">
+          Nuestros
+          Servicios Premium</h2>
+        <div class="w-24 h-1 bg-primary mx-auto mb-6"></div>
+        <p class="text-charcoal/60 max-w-2xl mx-auto text-base sm:text-lg" data-i18n="services.subtitle">Cuidamos cada
+          detalle para
+          que su hogar respire la esencia
+          del Mediterráneo con la máxima elegancia y profesionalidad.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- Service 1 -->
+        <div
+          class="group relative overflow-hidden rounded-2xl bg-white shadow-sm border border-primary/5 hover:shadow-xl transition-all duration-500">
+          <div class="aspect-[16/10] overflow-hidden">
+            <img alt="Professional gardening service"
+              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+              data-alt="Meticulously manicured luxury garden with olive trees"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkgbiZ-NERD7yl3oNlt9b5BVvKSo1PirG0gOenJ1tNAMB00iIyKERkDv47BCcVsKrRXzuz4WYMYb6iSI9bMhW9_ir09xBHWOK32ZuXAOCWsCUqoGkfjaD3yr3lz9WNPJ3-9ZvQn0rqm8nKVY0jgX2ZclSjzf36I2bf3JDY-inczxAIXBN3J6pBfOd_iOezwo-Wm-GhYS9OcYKYOLIflOk61PSskBC6NE4KABc774i1Yx0gKeZwmusD8HFgBnN-Y4lO5ktoiItBZD_x" />
+          </div>
+          <div class="p-8">
+            <div class="flex justify-between items-start mb-4">
+              <div>
+                <h3 class="serif-text text-2xl font-bold text-primary mb-2" data-i18n="svc.1.title">Jardinería</h3>
+                <p class="text-charcoal/60 leading-relaxed" data-i18n="svc.1.desc">Diseño, creación y mantenimiento
+                  integral de jardines, poda
+                  de altura y sistemas de riego.</p>
+              </div>
+              <span class="text-primary font-bold bg-primary/10 px-4 py-1 rounded-full text-sm"
+                data-i18n="svc.1.price">Desde 80€</span>
+            </div>
+            <div class="flex items-center gap-2 text-primary font-bold text-sm">
+              <span data-i18n="svc.more">Saber más</span> <span
+                class="material-symbols-outlined text-sm">arrow_forward</span>
+            </div>
+          </div>
+        </div>
+        <!-- Service 2 -->
+        <div
+          class="group relative overflow-hidden rounded-2xl bg-white shadow-sm border border-primary/5 hover:shadow-xl transition-all duration-500">
+          <div class="aspect-[16/10] overflow-hidden">
+            <img alt="Luxury swimming pool maintenance"
+              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+              data-alt="Crystal clear infinity pool overlooking the Mediterranean sea"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcBcbdSc6PgN0XnS3Cf8W9OcBQjFwQU8H4IebzkLmmExhfw6PB_NEJQyDowrKaTSr08mzsGPtAOIPWQ0J6fCxgPnvxq2IDQRLFFa81V3uz-yXF3A8Nlj--8ZJNA4B-UR6yHoRfzQUo2ZXCHCiHBSXRfrvDpy6irpU9ctLeTmwuHQLuL7sa8Qq55nTL7hy1YMKp36h29SYMU0HoT7HmFMsVVu4Q37Xi8zvrB3FmeZiRFJuW-A9kD2LTrCcu5O9bNoY9ioVcYk7FE07a" />
+          </div>
+          <div class="p-8">
+            <div class="flex justify-between items-start mb-4">
+              <div>
+                <h3 class="serif-text text-2xl font-bold text-primary mb-2" data-i18n="svc.2.title">Mantenimiento de
+                  Piscinas</h3>
+                <p class="text-charcoal/60 leading-relaxed" data-i18n="svc.2.desc">Tratamiento de aguas, limpieza
+                  técnica y revisión de
+                  sistemas de filtración.</p>
+              </div>
+              <span class="text-primary font-bold bg-primary/10 px-4 py-1 rounded-full text-sm"
+                data-i18n="svc.2.price">Desde 120€</span>
+            </div>
+            <div class="flex items-center gap-2 text-primary font-bold text-sm">
+              <span data-i18n="svc.more">Saber más</span> <span
+                class="material-symbols-outlined text-sm">arrow_forward</span>
+            </div>
+          </div>
+        </div>
+        <!-- Service 3 -->
+        <div
+          class="group relative overflow-hidden rounded-2xl bg-white shadow-sm border border-primary/5 hover:shadow-xl transition-all duration-500">
+          <div class="aspect-[16/10] overflow-hidden">
+            <img alt="Property renovation and reforms"
+              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+              data-alt="Modern architecture renovation with traditional stone elements"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTr4usrVgBD3MXF-uJNdId46kgyjwC40ywwtOm6gJKlVYE3N4wxEGgB9rckX2zXWM7Ui0-0HelCSr2FhcKs-y20qTEchXk3p3fwyWBJ63HkQT3GeuOkPkfniUn6lmuI1R9TUlMTAHI8jjA041KLtcKAwuDwS6cW7RUfJgMB1Ra637hksM3OwVcLgdopq_DVcJD4Rp2MxjeeozsyqSaaeZrVcKHVZl822zqzEBhg0wkHYZe2enZ0RltDFUqfuweuGZO8PdHhC6MAWiS" />
+          </div>
+          <div class="p-8">
+            <div class="flex justify-between items-start mb-4">
+              <div>
+                <h3 class="serif-text text-2xl font-bold text-primary mb-2" data-i18n="svc.3.title">Reformas</h3>
+                <p class="text-charcoal/60 leading-relaxed" data-i18n="svc.3.desc">Renovaciones integrales, albañilería,
+                  pintura y mejoras para
+                  interiores y exteriores.</p>
+              </div>
+              <span class="text-primary font-bold bg-primary/10 px-4 py-1 rounded-full text-sm"
+                data-i18n="svc.3.price">Presupuesto
+                Personalizado</span>
+            </div>
+            <div class="flex items-center gap-2 text-primary font-bold text-sm">
+              <span data-i18n="svc.more">Saber más</span> <span
+                class="material-symbols-outlined text-sm">arrow_forward</span>
+            </div>
+          </div>
+        </div>
+        <!-- Service 4 -->
+        <div
+          class="group relative overflow-hidden rounded-2xl bg-white shadow-sm border border-primary/5 hover:shadow-xl transition-all duration-500">
+          <div class="aspect-[16/10] overflow-hidden">
+            <img alt="Integral estate management"
+              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+              src="gestion-integral.png" />
+          </div>
+          <div class="p-8">
+            <div class="flex justify-between items-start mb-4">
+              <div>
+                <h3 class="serif-text text-2xl font-bold text-primary mb-2" data-i18n="svc.4.title">Gestión Integral
+                  24/7</h3>
+                <p class="text-charcoal/60 leading-relaxed" data-i18n="svc.4.desc">Cuidado total de su propiedad durante
+                  todo el año, llave en
+                  mano y emergencias.</p>
+              </div>
+              <span class="text-primary font-bold bg-primary/10 px-4 py-1 rounded-full text-sm"
+                data-i18n="svc.4.price">Desde 250€</span>
+            </div>
+            <div class="flex items-center gap-2 text-primary font-bold text-sm">
+              <span data-i18n="svc.more">Saber más</span> <span
+                class="material-symbols-outlined text-sm">arrow_forward</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-charcoal text-white pt-12 sm:pt-24 pb-8 sm:pb-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12 mb-10 sm:mb-20">
+        <div>
+          <div class="flex items-center gap-3 mb-8">
+            <img src="logo-nav.png" alt="VerdeAgua Logo" class="h-20 w-auto">
+          </div>
+          <p class="text-white/40 leading-relaxed mb-6" data-i18n="footer.desc">Excelencia en servicios de propiedad de
+            lujo. Especialistas en
+            el mantenimiento de los jardines y villas más exclusivas de Mallorca.</p>
+          <div class="flex gap-4">
+            <a class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-primary transition-colors"
+              href="#">
+              <svg class="w-5 h-5 fill-current" viewbox="0 0 24 24">
+                <path
+                  d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z">
+                </path>
+              </svg>
+            </a>
+            <a class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-primary transition-colors"
+              href="#">
+              <svg class="w-5 h-5 fill-current" viewbox="0 0 24 24">
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z">
+                </path>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div>
+          <h4 class="font-bold mb-8 uppercase tracking-widest text-sm text-primary" data-i18n="footer.services">
+            Servicios</h4>
+          <ul class="space-y-4 text-white/50 text-sm">
+            <li><a class="hover:text-white transition-colors" href="#servicios" data-i18n="footer.svc.1">Paisajismo
+                &amp; Jardín</a></li>
+            <li><a class="hover:text-white transition-colors" href="#" data-i18n="footer.svc.2">Cuidado de Piscinas</a>
+            </li>
+            <li><a class="hover:text-white transition-colors" href="#" data-i18n="footer.svc.3">Reformas y
+                Albañilería</a></li>
+            <li><a class="hover:text-white transition-colors" href="#" data-i18n="footer.svc.4">Gestión de
+                Propiedades</a></li>
+            <li><a class="hover:text-white transition-colors" href="#" data-i18n="footer.svc.5">Sistemas de Riego</a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-bold mb-8 uppercase tracking-widest text-sm text-primary" data-i18n="footer.contact">Contacto
+            Palma</h4>
+          <ul class="space-y-4 text-white/50 text-sm">
+            <li class="flex items-start gap-3">
+              <span class="material-symbols-outlined text-primary text-lg">location_on</span>
+              Palma, Illes Balears
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary text-lg">call</span>
+              +34 675 128 916
+            </li>
+            <li class="flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary text-lg">mail</span>
+              info@verdeaguamallorca.es
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-bold mb-8 uppercase tracking-widest text-sm text-primary" data-i18n="footer.newsletter">
+            Newsletter</h4>
+          <p class="text-white/40 text-xs mb-4" data-i18n="footer.newsletter.desc">Reciba consejos sobre el cuidado del
+            jardín mediterráneo.</p>
+          <div class="flex">
+            <input class="bg-white/5 border-none rounded-l-lg focus:ring-1 focus:ring-primary text-sm w-full"
+              placeholder="Email" type="email" />
+            <button class="bg-primary px-4 rounded-r-lg hover:bg-primary/80 transition-all">
+              <span class="material-symbols-outlined">send</span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-white/30">
+        <p data-i18n="footer.rights">© 2026 VerdeAgua Luxury Property Services. Todos los derechos reservados.</p>
+        <div class="flex items-center gap-2">
+          <span data-i18n="footer.madeby">Página web realizada por:</span>
+          <a href="https://intuify.net" target="_blank" rel="noopener noreferrer"
+            class="hover:opacity-80 transition-opacity">
+            <img src="intuify-logo.webp" alt="Intuify" class="h-5 w-auto">
+          </a>
+        </div>
+        <div class="flex flex-wrap gap-4 sm:gap-6 justify-center md:justify-start">
+          <a class="hover:text-white" href="aviso-legal.html" data-i18n="footer.legal">Aviso Legal</a>
+          <a class="hover:text-white" href="privacidad.html" data-i18n="footer.privacy">Privacidad</a>
+          <a class="hover:text-white" href="cookies.html">Cookies</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Cookie Consent Banner -->
+  <div id="cookieBanner" class="fixed bottom-0 left-0 right-0 z-[998] transition-transform duration-500"
+    style="transform: translateY(100%);">
+    <div class="max-w-5xl mx-auto px-4 pb-4">
+      <div
+        class="bg-charcoal text-white rounded-2xl shadow-2xl p-6 md:flex md:items-center md:gap-6 border border-white/10">
+        <div class="flex items-start gap-4 flex-1 mb-4 md:mb-0">
+          <span class="material-symbols-outlined text-3xl text-primary mt-0.5">cookie</span>
+          <div>
+            <h3 class="font-bold text-lg mb-1" data-i18n="cookie.title">Utilizamos cookies 🍪</h3>
+            <p class="text-white/60 text-sm leading-relaxed"><span data-i18n="cookie.desc">Usamos cookies propias y de
+                terceros para mejorar tu
+                experiencia de navegación. Puedes aceptarlas, rechazarlas o personalizar tus preferencias.</span> <a
+                href="cookies.html" class="text-primary underline hover:text-primary/80" data-i18n="cookie.more">Más
+                información</a></p>
+          </div>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-2 shrink-0">
+          <button onclick="rejectCookies()"
+            class="px-6 py-2.5 rounded-lg border border-white/20 text-white/70 text-sm font-semibold hover:bg-white/10 transition-all"
+            data-i18n="cookie.reject">
+            Rechazar
+          </button>
+          <button onclick="acceptCookies()"
+            class="px-6 py-2.5 rounded-lg bg-primary text-white text-sm font-bold hover:bg-primary/90 transition-all shadow-lg shadow-primary/30"
+            data-i18n="cookie.accept">
+            Aceptar todo
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Cookie consent
+    (function () {
+      const consent = localStorage.getItem('va_cookies');
+      if (!consent) {
+        setTimeout(() => {
+          document.getElementById('cookieBanner').style.transform = 'translateY(0)';
+        }, 1500);
+      }
+    })();
+    function acceptCookies() {
+      localStorage.setItem('va_cookies', 'accepted');
+      document.getElementById('cookieBanner').style.transform = 'translateY(100%)';
+    }
+    function rejectCookies() {
+      localStorage.setItem('va_cookies', 'rejected');
+      document.getElementById('cookieBanner').style.transform = 'translateY(100%)';
+    }
+  </script>
+
+  <!-- Plan Request Modal -->
+  <div id="planModal" class="fixed inset-0 z-[999] hidden">
+    <div class="absolute inset-0 bg-black/50 backdrop-blur-sm" onclick="closePlanModal()"></div>
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-md">
+      <div class="bg-white rounded-2xl shadow-2xl overflow-hidden mx-4">
+        <div class="bg-primary p-6 text-white relative">
+          <button onclick="closePlanModal()"
+            class="absolute top-4 right-4 text-white/60 hover:text-white transition-colors">
+            <span class="material-symbols-outlined">close</span>
+          </button>
+          <h3 class="serif-text text-2xl font-bold" id="modalTitle">Solicitar Plan</h3>
+          <p class="text-white/70 text-sm mt-1">Mantenimiento <span id="modalPlanName">Premium</span> — <span
+              id="modalPlanPrice">350€/mes</span></p>
+        </div>
+        <div class="p-6 space-y-4">
+          <div class="space-y-1">
+            <label class="text-sm font-bold text-primary uppercase tracking-wider">Nombre completo *</label>
+            <input type="text" id="planNombre" placeholder="Tu nombre y apellidos"
+              class="w-full bg-sandstone/30 border-primary/20 rounded-lg py-3 px-4 focus:ring-primary focus:border-primary transition-all" />
+          </div>
+          <div class="space-y-1">
+            <label class="text-sm font-bold text-primary uppercase tracking-wider">Teléfono *</label>
+            <input type="tel" id="planTelefono" placeholder="+34 600 000 000"
+              class="w-full bg-sandstone/30 border-primary/20 rounded-lg py-3 px-4 focus:ring-primary focus:border-primary transition-all" />
+          </div>
+          <div class="space-y-1">
+            <label class="text-sm font-bold text-primary uppercase tracking-wider">Email *</label>
+            <input type="email" id="planEmail" placeholder="tu@email.com"
+              class="w-full bg-sandstone/30 border-primary/20 rounded-lg py-3 px-4 focus:ring-primary focus:border-primary transition-all" />
+          </div>
+          <button id="planSubmitBtn" onclick="submitPlanRequest()"
+            class="w-full flex items-center justify-center gap-2 bg-primary text-white font-bold py-4 rounded-lg hover:bg-primary/90 transition-all text-lg shadow-lg shadow-primary/20 mt-2">
+            <span class="material-symbols-outlined">send</span>
+            <span id="planSubmitText">Enviar Solicitud</span>
+          </button>
+          <p class="text-xs text-charcoal/40 text-center">Nos pondremos en contacto contigo en menos de 24h</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let selectedPlan = '';
+    let selectedPrice = '';
+
+    function openPlanModal(plan, price) {
+      selectedPlan = plan;
+      selectedPrice = price;
+      document.getElementById('modalPlanName').textContent = plan;
+      document.getElementById('modalPlanPrice').textContent = price;
+      document.getElementById('planNombre').value = '';
+      document.getElementById('planTelefono').value = '';
+      document.getElementById('planEmail').value = '';
+      document.getElementById('planSubmitBtn').disabled = false;
+      document.getElementById('planSubmitText').textContent = 'Enviar Solicitud';
+      document.getElementById('planModal').classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closePlanModal() {
+      document.getElementById('planModal').classList.add('hidden');
+      document.body.style.overflow = '';
+    }
+
+    function submitPlanRequest() {
+      const nombre = document.getElementById('planNombre').value.trim();
+      const telefono = document.getElementById('planTelefono').value.trim();
+      const email = document.getElementById('planEmail').value.trim();
+
+      if (!nombre || !telefono || !email) {
+        alert('Por favor, completa todos los campos.');
+        return;
+      }
+
+      const btn = document.getElementById('planSubmitBtn');
+      const btnText = document.getElementById('planSubmitText');
+      btn.disabled = true;
+      btnText.textContent = 'Enviando...';
+
+      fetch('/api/solicitar-plan', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ nombre, telefono, email, plan: selectedPlan, precio: selectedPrice })
+      })
+        .then(res => {
+          if (!res.ok) throw new Error('Error');
+          return res.json();
+        })
+        .then(() => {
+          document.querySelector('#planModal .p-6.space-y-4').innerHTML = `
+          <div class="text-center py-6 space-y-4">
+            <div class="size-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto">
+              <span class="material-symbols-outlined text-4xl text-primary">check_circle</span>
+            </div>
+            <h4 class="text-xl font-bold text-primary">¡Solicitud Enviada!</h4>
+            <p class="text-charcoal/60">Gracias, <strong>${nombre}</strong>. Te contactaremos pronto para tu plan <strong>Mantenimiento ${selectedPlan}</strong>.</p>
+            <button onclick="closePlanModal()" class="mt-2 px-8 py-3 bg-primary text-white font-bold rounded-lg hover:bg-primary/90 transition-all">Cerrar</button>
+          </div>`;
+        })
+        .catch(() => {
+          btn.disabled = false;
+          btnText.textContent = 'Enviar Solicitud';
+          alert('Error al enviar. Inténtalo de nuevo o llámanos al +34 675 128 916.');
+        });
+    }
+
+    // Close modal on Escape key
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closePlanModal(); });
+  </script>
+
+  <script src="translations.js"></script>
+
+</body>
+
+</html>

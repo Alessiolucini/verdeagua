@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Aviso Legal | VerdeAgua</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { "primary": "#2d5016", "background-light": "#faf8f5", "sandstone": "#f0ebe3", "charcoal": "#1a1a1a" },
+                    fontFamily: { "display": ["Inter", "sans-serif"], "serif": ["Playfair Display", "serif"] },
+                },
+            },
+        }
+    </script>
+    <style>
+        .serif-text {
+            font-family: 'Playfair Display', serif;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+
+<body class="bg-background-light text-charcoal">
+
+    <!-- Navigation -->
+    <nav class="bg-white/90 backdrop-blur-md border-b border-primary/10 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-3">
+                <img src="logo-nav-dark.png" alt="VerdeAgua" class="h-10">
+            </a>
+            <div class="flex items-center gap-2 sm:gap-4 flex-wrap">
+                <div class="flex items-center gap-1">
+                    <button class="lang-flag text-lg cursor-pointer hover:scale-125 transition-transform" data-lang="es"
+                        onclick="setPageLang('es')">🇪🇸</button>
+                    <button class="lang-flag text-lg cursor-pointer hover:scale-125 transition-transform" data-lang="en"
+                        onclick="setPageLang('en')">🇬🇧</button>
+                    <button class="lang-flag text-lg cursor-pointer hover:scale-125 transition-transform" data-lang="de"
+                        onclick="setPageLang('de')">🇩🇪</button>
+                    <button class="lang-flag text-lg cursor-pointer hover:scale-125 transition-transform" data-lang="fr"
+                        onclick="setPageLang('fr')">🇫🇷</button>
+                    <button class="lang-flag text-lg cursor-pointer hover:scale-125 transition-transform" data-lang="it"
+                        onclick="setPageLang('it')">🇮🇹</button>
+                </div>
+                <a href="index.html"
+                    class="flex items-center gap-2 text-primary font-bold hover:text-primary/70 transition-colors">
+                    <span class="material-symbols-outlined">arrow_back</span>
+                    <span data-i18n="back">Volver al inicio</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Content -->
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 py-8 sm:py-16">
+        <div class="mb-8 sm:mb-12">
+            <h1 class="serif-text text-2xl sm:text-4xl font-bold text-primary mb-4" data-i18n="legal.title">Aviso Legal
+            </h1>
+            <p class="text-charcoal/50 text-sm" data-i18n="legal.updated">Última actualización: Febrero 2026</p>
+        </div>
+
+        <div class="space-y-10 text-charcoal/80 leading-relaxed">
+
+            <section>
+                <h2 class="text-xl font-bold text-primary mb-4" data-i18n="legal.s1">1. Datos identificativos</h2>
+                <div class="bg-sandstone/50 rounded-xl p-6 space-y-2">
+                    <p><strong data-i18n="legal.s1.name">Denominación social:</strong> VerdeAgua Premium Property
+                        Services</p>
+                    <p><strong data-i18n="legal.s1.address">Domicilio:</strong> <span
+                            data-i18n="legal.s1.addressVal">Mallorca, Islas Baleares, España</span></p>
+                    <p><strong>Email:</strong> <a href="mailto:info@verdeaguamallorca.es"
+                            class="text-primary font-semibold hover:underline">info@verdeaguamallorca.es</a></p>
+                    <p><strong data-i18n="legal.s1.phone">Teléfono:</strong> <a href="tel:+34675128916"
+                            class="text-primary font-semibold hover:underline">+34 675 128 916</a></p>
+                    <p><strong data-i18n="legal.s1.web">Sitio web:</strong> verdeagua.net</p>
+                </div>
+            </section>
+
+            <section>
+                <h2 class="text-xl font-bold text-primary mb-4" data-i18n="legal.s2">2. Objeto</h2>
+                <p data-i18n="legal.s2.p1">El presente aviso legal regula el uso del sitio web
+                    <strong>verdeagua.net</strong> (en adelante, el
+                    "Sitio Web"), del que es titular VerdeAgua Premium Property Services (en adelante, "VerdeAgua").
+                </p>
+                <p class="mt-3" data-i18n="legal.s2.p2">La navegación por el Sitio Web atribuye la condición de usuario
+                    del mismo e implica la
+                    aceptación plena y sin reservas de todas y cada una de las disposiciones incluidas en este Aviso
+                    Legal.</p>
+            </section>
+
+            <section>
+                <h2 class="text-xl font-bold text-primary mb-4" data-i18n="legal.s3">3. Condiciones de uso</h2>
+                <p data-i18n="legal.s3.p1">El usuario se compromete a utilizar el Sitio Web de conformidad con la ley,
+                    el presente Aviso Legal,
+                    las buenas costumbres y el orden público. El usuario se obliga a abstenerse de utilizar el Sitio Web
+                    con fines ilícitos o contrarios a lo establecido en el presente Aviso Legal, lesivos de los derechos
+                    e intereses de terceros, o que de cualquier forma puedan dañar, inutilizar o deteriorar el Sitio Web
+                    o impedir un normal disfrute del mismo.</p>
+            </section>
+
+            <section>
+                <h2 class="text-xl font-bold text-primary mb-4" data-i18n="legal.s4">4. Propiedad intelectual e
+                    industrial</h2>
+                <p data-i18n="legal.s4.p1">Todos los contenidos del Sitio Web, incluyendo sin limitación, textos,
+                    fotografías, gráficos,
+                    imágenes, iconos, tecnología, software, enlaces y demás contenidos audiovisuales o sonoros, así como
+                    su diseño gráfico y códigos fuente, son propiedad intelectual de VerdeAgua o de terceros, sin que
+                    puedan entenderse cedidos al usuario ninguno de los derechos de explotación sobre los mismos más
+                    allá de lo estrictamente necesario para el correcto uso del Sitio Web.</p>
+                <p class="mt-3" data-i18n="legal.s4.p2">La reproducción, distribución, comunicación pública,
+                    transformación o cualquier otra
+                    actividad similar o análoga sobre los contenidos del Sitio Web queda totalmente prohibida salvo que
+                    medie expresa autorización de VerdeAgua.</p>
+            </section>
+
+            <section>
+                <h2 class="text-xl font-bold text-primary mb-4" data-i18n="legal.s5">5. Exclusión de responsabilidad
+                </h2>
+                <p data-i18n="legal.s5.p1">VerdeAgua no se hace responsable de los daños y perjuicios de cualquier
+                    naturaleza que puedan
+                    ocasionarse por la falta de disponibilidad, mantenimiento o efectivo funcionamiento del Sitio Web,
+                    así como de los errores en los contenidos. VerdeAgua no se responsabiliza del uso que el usuario
+                    pueda hacer de los contenidos del Sitio Web.</p>
+            </section>
+
+            <section>
+                <h2 class="text-xl font-bold text-primary mb-4" data-i18n="legal.s6">6. Enlaces de terceros</h2>
+                <p data-i18n="legal.s6.p1">En el caso de que en el Sitio Web se dispusiesen enlaces o hipervínculos
+                    hacia otros sitios de
+                    Internet, VerdeAgua no ejercerá ningún tipo de control sobre dichos sitios y contenidos. En ningún
+                    caso VerdeAgua asumirá responsabilidad alguna por los contenidos de algún enlace perteneciente a un
+                    sitio web ajeno.</p>
+            </section>
+
+            <section>
+                <h2 class="text-xl font-bold text-primary mb-4" data-i18n="legal.s7">7. Legislación aplicable y
+                    jurisdicción</h2>
+                <p data-i18n="legal.s7.p1">La relación entre VerdeAgua y el usuario se regirá por la normativa española
+                    vigente. Todas las
+                    disputas y reclamaciones derivadas de este aviso legal se resolverán por los juzgados y tribunales
+                    de Palma de Mallorca (Islas Baleares), salvo que la normativa aplicable disponga otra cosa.</p>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-charcoal text-white/60 py-8">
+        <div
+            class="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs">
+            <p data-i18n="footer.rights">© 2026 VerdeAgua Luxury Property Services. Todos los derechos reservados.</p>
+            <div class="flex gap-6">
+                <a class="text-white/80 font-semibold" href="aviso-legal.html" data-i18n="footer.legal">Aviso Legal</a>
+                <a class="hover:text-white" href="privacidad.html" data-i18n="footer.privacy">Privacidad</a>
+                <a class="hover:text-white" href="cookies.html">Cookies</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="translations-pages.js"></script>
+</body>
+
+</html>

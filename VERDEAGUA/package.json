@@ -1,0 +1,14 @@
+{
+    "name": "verdeagua-web",
+    "version": "1.0.0",
+    "description": "VerdeAgua Premium Property Services Website",
+    "main": "server.js",
+    "scripts": {
+        "start": "node server.js",
+        "dev": "node server.js"
+    },
+    "dependencies": {
+        "express": "^4.21.0",
+        "nodemailer": "^6.9.0"
+    }
+}

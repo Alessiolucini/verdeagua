@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>VerdeAgua Premium Quote Request Form</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;family=Playfair+Display:ital,wght@0,400;0,700;1,400&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#2d5016",
+                        "accent": "#C4853A",
+                        "background-light": "#FAF8F5",
+                        "background-dark": "#181f13",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"],
+                        "serif": ["Playfair Display", "serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Manrope', sans-serif;
+            background-color: #FAF8F5;
+        }
+
+        .serif-title {
+            font-family: 'Playfair Display', serif;
+        }
+    </style>
+</head>
+
+<body class="bg-background-light text-[#131910] antialiased">
+    <!-- Top Navigation Bar -->
+    <header class="sticky top-0 z-50 w-full border-b border-primary/10 bg-white/80 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 h-16 sm:h-20 flex items-center justify-between">
+            <!-- Logo (Left) -->
+            <a href="index.html" class="flex-shrink-0">
+                <img src="logo-nav.png" alt="VerdeAgua Logo"
+                    class="h-10 sm:h-16 w-auto transition-transform hover:scale-105">
+            </a>
+
+            <!-- Nav Links (Center) -->
+            <nav class="hidden md:flex items-center gap-10">
+                <a class="text-sm font-semibold hover:text-primary transition-colors" href="index.html"
+                    data-i18n="pres.nav.inicio">Inicio</a>
+                <a class="text-sm font-semibold hover:text-primary transition-colors" href="index.html#servicios"
+                    data-i18n="pres.nav.servicios">Servicios</a>
+                <a class="text-sm font-semibold hover:text-primary transition-colors" href="index.html#proyectos"
+                    data-i18n="pres.nav.proyectos">Proyectos</a>
+            </nav>
+            <!-- Language Selector -->
+            <div class="flex items-center gap-1">
+                <button class="lang-flag text-lg cursor-pointer hover:scale-125 transition-transform" data-lang="es"
+                    onclick="setPageLang('es')">🇪🇸</button>
+                <button class="lang-flag text-lg cursor-pointer hover:scale-125 transition-transform" data-lang="en"
+                    onclick="setPageLang('en')">🇬🇧</button>
+                <button class="lang-flag text-lg cursor-pointer hover:scale-125 transition-transform" data-lang="de"
+                    onclick="setPageLang('de')">🇩🇪</button>
+                <button class="lang-flag text-lg cursor-pointer hover:scale-125 transition-transform" data-lang="fr"
+                    onclick="setPageLang('fr')">🇫🇷</button>
+                <button class="lang-flag text-lg cursor-pointer hover:scale-125 transition-transform" data-lang="it"
+                    onclick="setPageLang('it')">🇮🇹</button>
+            </div>
+        </div>
+    </header>
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 py-6 sm:py-12">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-12 items-start">
+            <!-- Left Column: Main Form Area -->
+            <div class="lg:col-span-2 space-y-6 sm:space-y-10">
+                <div class="space-y-3 sm:space-y-4">
+                    <h2 class="serif-title text-3xl sm:text-5xl font-bold text-primary leading-tight"
+                        data-i18n="pres.title">
+                        Solicita tu Presupuesto
+                        Gratuito</h2>
+                    <p class="text-lg text-primary/70 max-w-xl" data-i18n="pres.subtitle">Descubre la excelencia en el
+                        cuidado de propiedades en
+                        Mallorca. Completa los detalles a continuación y recibe una propuesta personalizada.</p>
+                </div>
+                <!-- Progress Stepper -->
+                <div class="relative py-4">
+                    <div class="flex justify-between relative z-10">
+                        <div class="flex flex-col items-center gap-2 group">
+                            <div
+                                class="size-10 rounded-full bg-primary text-white flex items-center justify-center font-bold shadow-md">
+                                1</div>
+                            <span class="text-xs font-bold text-primary uppercase tracking-wider"
+                                data-i18n="pres.step.1">Servicio</span>
+                        </div>
+                        <div class="flex flex-col items-center gap-2 group">
+                            <div
+                                class="size-10 rounded-full bg-white border-2 border-primary/20 text-primary/40 flex items-center justify-center font-bold">
+                                2</div>
+                            <span class="text-xs font-bold text-primary/40 uppercase tracking-wider"
+                                data-i18n="pres.step.2">Detalles</span>
+                        </div>
+                        <div class="flex flex-col items-center gap-2 group">
+                            <div
+                                class="size-10 rounded-full bg-white border-2 border-primary/20 text-primary/40 flex items-center justify-center font-bold">
+                                3</div>
+                            <span class="text-xs font-bold text-primary/40 uppercase tracking-wider"
+                                data-i18n="pres.step.3">Ubicación</span>
+                        </div>
+                        <div class="flex flex-col items-center gap-2 group">
+                            <div
+                                class="size-10 rounded-full bg-white border-2 border-primary/20 text-primary/40 flex items-center justify-center font-bold">
+                                4</div>
+                            <span class="text-xs font-bold text-primary/40 uppercase tracking-wider"
+                                data-i18n="pres.step.4">Contacto</span>
+                        </div>
+                    </div>
+                    <!-- Progress Bar Background -->
+                    <div class="absolute top-9 left-0 w-full h-0.5 bg-primary/10 -z-0"></div>
+                    <!-- Active Progress Fill -->
+                    <div class="absolute top-9 left-0 w-1/4 h-1 bg-accent -z-0 rounded-full"></div>
+                </div>
+                <!-- STEP 1: Service Selection -->
+                <div id="step1" class="form-step bg-white/50 border border-primary/5 rounded-2xl p-8 space-y-6">
+                    <div class="flex items-center gap-3">
+                        <span class="material-symbols-outlined text-accent">spa</span>
+                        <h3 class="text-xl font-bold text-primary" data-i18n="pres.s1.title">¿Qué servicio necesitas
+                            hoy?</h3>
+                    </div>
+                    <div id="serviceGrid" class="grid grid-cols-2 gap-4">
+                        <label class="relative cursor-pointer group">
+                            <input class="peer sr-only svc-checkbox" data-name="Jardinería" type="checkbox" />
+                            <div
+                                class="h-full p-6 bg-white border-2 border-primary/10 rounded-xl peer-checked:border-primary peer-checked:bg-primary/5 transition-all hover:shadow-md">
+                                <div
+                                    class="size-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-4 group-hover:scale-110 transition-transform">
+                                    <span class="material-symbols-outlined text-3xl">potted_plant</span>
+                                </div>
+                                <p class="font-bold text-primary" data-i18n="pres.svc.jardineria">Jardinería</p>
+                                <p class="text-sm text-primary/60 mt-1" data-i18n="pres.svc.jardineria.desc">Paisajismo
+                                    y mantenimiento experto</p>
+                            </div>
+                            <div class="absolute top-3 right-3 text-primary opacity-0 peer-checked:opacity-100">
+                                <span class="material-symbols-outlined">check_circle</span>
+                            </div>
+                        </label>
+                        <label class="relative cursor-pointer group">
+                            <input class="peer sr-only svc-checkbox" data-name="Piscinas" type="checkbox" />
+                            <div
+                                class="h-full p-6 bg-white border-2 border-primary/10 rounded-xl peer-checked:border-primary peer-checked:bg-primary/5 transition-all hover:shadow-md">
+                                <div
+                                    class="size-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-4 group-hover:scale-110 transition-transform">
+                                    <span class="material-symbols-outlined text-3xl">pool</span>
+                                </div>
+                                <p class="font-bold text-primary" data-i18n="pres.svc.piscinas">Piscinas</p>
+                                <p class="text-sm text-primary/60 mt-1" data-i18n="pres.svc.piscinas.desc">Limpieza,
+                                    cloro y sistemas técnicos</p>
+                            </div>
+                            <div class="absolute top-3 right-3 text-primary opacity-0 peer-checked:opacity-100">
+                                <span class="material-symbols-outlined">check_circle</span>
+                            </div>
+                        </label>
+                        <label class="relative cursor-pointer group">
+                            <input class="peer sr-only svc-checkbox" data-name="Reformas" type="checkbox" />
+                            <div
+                                class="h-full p-6 bg-white border-2 border-primary/10 rounded-xl peer-checked:border-primary peer-checked:bg-primary/5 transition-all hover:shadow-md">
+                                <div
+                                    class="size-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-4 group-hover:scale-110 transition-transform">
+                                    <span class="material-symbols-outlined text-3xl">architecture</span>
+                                </div>
+                                <p class="font-bold text-primary" data-i18n="pres.svc.reformas">Reformas</p>
+                                <p class="text-sm text-primary/60 mt-1" data-i18n="pres.svc.reformas.desc">Renovaciones
+                                    y mejoras de exterior</p>
+                            </div>
+                            <div class="absolute top-3 right-3 text-primary opacity-0 peer-checked:opacity-100">
+                                <span class="material-symbols-outlined">check_circle</span>
+                            </div>
+                        </label>
+                        <label class="relative cursor-pointer group">
+                            <input class="peer sr-only svc-checkbox" data-name="Mantenimiento" type="checkbox" />
+                            <div
+                                class="h-full p-6 bg-white border-2 border-primary/10 rounded-xl peer-checked:border-primary peer-checked:bg-primary/5 transition-all hover:shadow-md">
+                                <div
+                                    class="size-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary mb-4 group-hover:scale-110 transition-transform">
+                                    <span class="material-symbols-outlined text-3xl">home_repair_service</span>
+                                </div>
+                                <p class="font-bold text-primary" data-i18n="pres.svc.mantenimiento">Mantenimiento</p>
+                                <p class="text-sm text-primary/60 mt-1" data-i18n="pres.svc.mantenimiento.desc">Cuidado
+                                    integral 365 días al año</p>
+                            </div>
+                            <div class="absolute top-3 right-3 text-primary opacity-0 peer-checked:opacity-100">
+                                <span class="material-symbols-outlined">check_circle</span>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- STEP 2: Property Details -->
+                <div id="step2" class="form-step bg-white/50 border border-primary/5 rounded-2xl p-8 space-y-8"
+                    style="display:none">
+                    <div class="flex items-center gap-3">
+                        <span class="material-symbols-outlined text-accent">analytics</span>
+                        <h3 class="text-xl font-bold text-primary" data-i18n="pres.s2.title">Detalles de la Propiedad
+                        </h3>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="space-y-2">
+                            <label class="text-sm font-bold text-primary uppercase tracking-wider"
+                                data-i18n="pres.freq.label">Frecuencia
+                                deseada</label>
+                            <select id="freqSelect"
+                                class="w-full bg-white border-primary/20 rounded-lg py-3 px-4 focus:ring-primary focus:border-primary transition-all">
+                                <option data-i18n-option="pres.freq.once">Puntual (Una sola vez)</option>
+                                <option selected data-i18n-option="pres.freq.weekly">Semanal (Recomendado)</option>
+                                <option data-i18n-option="pres.freq.biweekly">Quincenal</option>
+                                <option data-i18n-option="pres.freq.monthly">Mensual</option>
+                            </select>
+                        </div>
+                        <div class="space-y-2">
+                            <label class="text-sm font-bold text-primary uppercase tracking-wider"
+                                data-i18n="pres.size.label">Tamaño
+                                aproximado</label>
+                            <div id="sizeButtons" class="flex bg-primary/5 p-1 rounded-lg">
+                                <button type="button"
+                                    class="size-btn flex-1 py-2 text-sm font-bold rounded-md bg-white text-primary shadow-sm border border-primary/10">&lt;200m²</button>
+                                <button type="button"
+                                    class="size-btn flex-1 py-2 text-sm font-bold text-primary/60 hover:text-primary transition-colors">500m²</button>
+                                <button type="button"
+                                    class="size-btn flex-1 py-2 text-sm font-bold text-primary/60 hover:text-primary transition-colors">1000m²</button>
+                                <button type="button"
+                                    class="size-btn flex-1 py-2 text-sm font-bold text-primary/60 hover:text-primary transition-colors">&gt;1500m²</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="space-y-4">
+                        <label class="text-sm font-bold text-primary uppercase tracking-wider"
+                            data-i18n="pres.photos.label">Fotos de la propiedad
+                            (Opcional)</label>
+                        <div id="uploadArea"
+                            class="border-2 border-dashed border-primary/20 rounded-xl p-10 flex flex-col items-center justify-center bg-white hover:bg-primary/5 transition-colors cursor-pointer group"
+                            onclick="document.getElementById('fileInput').click()">
+                            <input type="file" id="fileInput" multiple accept="image/jpeg,image/png" class="hidden" />
+                            <span
+                                class="material-symbols-outlined text-4xl text-primary/30 group-hover:text-primary/60 transition-colors mb-2">cloud_upload</span>
+                            <p class="text-primary font-medium" id="uploadText" data-i18n="pres.photos.upload">Sube tus
+                                fotos aquí</p>
+                            <p class="text-sm text-primary/50 mt-1" id="uploadHint" data-i18n="pres.photos.hint">JPG,
+                                PNG hasta 10MB cada una</p>
+                        </div>
+                        <div id="fileList" class="mt-3 space-y-2"></div>
+                    </div>
+                </div>
+
+                <!-- STEP 3: Location -->
+                <div id="step3" class="form-step bg-white/50 border border-primary/5 rounded-2xl p-8 space-y-8"
+                    style="display:none">
+                    <div class="flex items-center gap-3">
+                        <span class="material-symbols-outlined text-accent">location_on</span>
+                        <h3 class="text-xl font-bold text-primary" data-i18n="pres.s3.title">Ubicación de la Propiedad
+                        </h3>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="space-y-2">
+                            <label class="text-sm font-bold text-primary uppercase tracking-wider"
+                                data-i18n="pres.zone.label">Municipio /
+                                Zona</label>
+                            <select id="zonaSelect"
+                                class="w-full bg-white border-primary/20 rounded-lg py-3 px-4 focus:ring-primary focus:border-primary transition-all">
+                                <option value="" data-i18n-option="pres.zone.placeholder">Selecciona una zona...
+                                </option>
+                                <option>Palma de Mallorca</option>
+                                <option>Calvià</option>
+                                <option>Andratx</option>
+                                <option>Sóller</option>
+                                <option>Pollença</option>
+                                <option>Alcúdia</option>
+                                <option>Manacor</option>
+                                <option>Santanyí</option>
+                                <option>Llucmajor</option>
+                                <option>Inca</option>
+                                <option data-i18n-option="pres.zone.other">Otra zona</option>
+                            </select>
+                        </div>
+                        <div class="space-y-2">
+                            <label class="text-sm font-bold text-primary uppercase tracking-wider"
+                                data-i18n="pres.type.label">Tipo de
+                                propiedad</label>
+                            <select id="tipoSelect"
+                                class="w-full bg-white border-primary/20 rounded-lg py-3 px-4 focus:ring-primary focus:border-primary transition-all">
+                                <option value="" data-i18n-option="pres.type.placeholder">Selecciona tipo...</option>
+                                <option data-i18n-option="pres.type.villa">Villa / Chalet</option>
+                                <option data-i18n-option="pres.type.finca">Finca rústica</option>
+                                <option data-i18n-option="pres.type.apt">Apartamento con jardín</option>
+                                <option data-i18n-option="pres.type.hotel">Hotel / Agroturismo</option>
+                                <option data-i18n-option="pres.type.community">Comunidad de vecinos</option>
+                                <option data-i18n-option="pres.type.commercial">Local comercial</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="space-y-2">
+                        <label class="text-sm font-bold text-primary uppercase tracking-wider"
+                            data-i18n="pres.address.label">Dirección o referencia
+                            (Opcional)</label>
+                        <input type="text" id="direccion" placeholder="Ej: Calle Son Vida, cerca del campo de golf..."
+                            data-i18n-placeholder="pres.address.placeholder"
+                            class="w-full bg-white border-primary/20 rounded-lg py-3 px-4 focus:ring-primary focus:border-primary transition-all" />
+                    </div>
+                    <div class="space-y-2">
+                        <label class="text-sm font-bold text-primary uppercase tracking-wider"
+                            data-i18n="pres.notes.label">Notas adicionales
+                            (Opcional)</label>
+                        <textarea id="notas" rows="3"
+                            placeholder="Describe cualquier detalle relevante sobre la propiedad o el acceso..."
+                            data-i18n-placeholder="pres.notes.placeholder"
+                            class="w-full bg-white border-primary/20 rounded-lg py-3 px-4 focus:ring-primary focus:border-primary transition-all resize-none"></textarea>
+                    </div>
+                </div>
+
+                <!-- STEP 4: Contact Info -->
+                <div id="step4" class="form-step bg-white/50 border border-primary/5 rounded-2xl p-8 space-y-8"
+                    style="display:none">
+                    <div class="flex items-center gap-3">
+                        <span class="material-symbols-outlined text-accent">contact_mail</span>
+                        <h3 class="text-xl font-bold text-primary" data-i18n="pres.s4.title">Tus Datos de Contacto</h3>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="space-y-2">
+                            <label class="text-sm font-bold text-primary uppercase tracking-wider"
+                                data-i18n="pres.name.label">Nombre completo
+                                *</label>
+                            <input type="text" id="nombre" placeholder="Tu nombre y apellidos"
+                                data-i18n-placeholder="pres.name.placeholder" required
+                                class="w-full bg-white border-primary/20 rounded-lg py-3 px-4 focus:ring-primary focus:border-primary transition-all" />
+                        </div>
+                        <div class="space-y-2">
+                            <label class="text-sm font-bold text-primary uppercase tracking-wider"
+                                data-i18n="pres.phone.label">Teléfono *</label>
+                            <input type="tel" id="telefono" placeholder="+34 600 000 000" required
+                                class="w-full bg-white border-primary/20 rounded-lg py-3 px-4 focus:ring-primary focus:border-primary transition-all" />
+                        </div>
+                    </div>
+                    <div class="space-y-2">
+                        <label class="text-sm font-bold text-primary uppercase tracking-wider"
+                            data-i18n="pres.email.label">Email *</label>
+                        <input type="email" id="email" placeholder="tu@email.com" required
+                            class="w-full bg-white border-primary/20 rounded-lg py-3 px-4 focus:ring-primary focus:border-primary transition-all" />
+                    </div>
+                    <div class="space-y-2">
+                        <label class="text-sm font-bold text-primary uppercase tracking-wider"
+                            data-i18n="pres.when.label">¿Cuándo te viene
+                            mejor?</label>
+                        <select id="disponibilidad"
+                            class="w-full bg-white border-primary/20 rounded-lg py-3 px-4 focus:ring-primary focus:border-primary transition-all">
+                            <option data-i18n-option="pres.when.asap">Lo antes posible</option>
+                            <option data-i18n-option="pres.when.thisweek">Esta semana</option>
+                            <option data-i18n-option="pres.when.nextweek">La próxima semana</option>
+                            <option data-i18n-option="pres.when.norush">Sin prisa, quiero información</option>
+                        </select>
+                    </div>
+                    <div class="flex items-start gap-3 bg-primary/5 p-4 rounded-xl">
+                        <span class="material-symbols-outlined text-accent mt-0.5">shield</span>
+                        <p class="text-sm text-primary/70" data-i18n="pres.privacy">Tus datos están protegidos y solo se
+                            usarán para preparar tu
+                            presupuesto personalizado. No compartimos tu información con terceros.</p>
+                    </div>
+                </div>
+
+                <!-- Navigation Buttons -->
+                <div class="flex items-center justify-between pt-6">
+                    <button id="prevBtn" type="button" style="visibility:hidden"
+                        class="flex items-center gap-2 px-8 py-3 rounded-xl font-bold border-2 border-primary/10 text-primary hover:bg-primary/5 transition-colors">
+                        <span class="material-symbols-outlined text-lg">arrow_back</span>
+                        <span data-i18n="pres.prev">Anterior</span>
+                    </button>
+                    <button id="nextBtn" type="button"
+                        class="flex items-center gap-2 px-10 py-4 rounded-xl font-bold bg-primary text-white shadow-xl shadow-primary/30 hover:bg-primary/90 transition-all hover:-translate-y-0.5 active:translate-y-0">
+                        <span id="nextBtnText" data-i18n="pres.next">Siguiente paso</span>
+                        <span class="material-symbols-outlined text-lg">arrow_forward</span>
+                    </button>
+                </div>
+            </div>
+            <!-- Right Column: Sticky Summary Sidebar -->
+            <aside class="sticky top-32 space-y-6">
+                <!-- Summary Card -->
+                <div class="bg-white rounded-2xl shadow-xl shadow-primary/5 border border-primary/5 overflow-hidden">
+                    <div class="bg-primary p-6 text-white">
+                        <h4 class="serif-title text-xl font-bold" data-i18n="pres.sidebar.title">Tu Solicitud</h4>
+                        <p class="text-white/70 text-sm mt-1" data-i18n="pres.sidebar.subtitle">Resumen del presupuesto
+                        </p>
+                    </div>
+                    <div class="p-6 space-y-6">
+                        <!-- Dynamic Summary List -->
+                        <div class="space-y-4">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <p class="text-xs font-bold text-primary/40 uppercase tracking-tighter"
+                                        data-i18n="pres.sidebar.services">Servicios
+                                        seleccionados</p>
+                                    <div id="sidebarServices" class="mt-1">
+                                        <p class="font-bold text-primary flex items-center gap-2">
+                                            <span class="size-2 rounded-full bg-accent"></span>
+                                            Jardinería
+                                        </p>
+                                    </div>
+                                </div>
+                                <button class="text-primary/40 hover:text-primary"
+                                    onclick="document.getElementById('serviceGrid').scrollIntoView({behavior:'smooth'})">
+                                    <span class="material-symbols-outlined text-sm">edit</span>
+                                </button>
+                            </div>
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <p class="text-xs font-bold text-primary/40 uppercase tracking-tighter"
+                                        data-i18n="pres.sidebar.freq">Frecuencia
+                                    </p>
+                                    <p id="sidebarFreq" class="font-bold text-primary mt-1">Semanal</p>
+                                </div>
+                                <button class="text-primary/40 hover:text-primary"
+                                    onclick="document.getElementById('freqSelect').scrollIntoView({behavior:'smooth'});document.getElementById('freqSelect').focus()">
+                                    <span class="material-symbols-outlined text-sm">edit</span>
+                                </button>
+                            </div>
+                        </div>
+                        <hr class="border-primary/5" />
+                        <!-- Trust Badges -->
+                        <div class="space-y-3">
+                            <div class="flex items-center gap-3 text-primary/70">
+                                <span class="material-symbols-outlined text-accent">verified</span>
+                                <span class="text-sm font-medium" data-i18n="pres.sidebar.response">Respuesta en menos
+                                    de 24h</span>
+                            </div>
+                            <div class="flex items-center gap-3 text-primary/70">
+                                <span class="material-symbols-outlined text-accent">schedule</span>
+                                <span class="text-sm font-medium" data-i18n="pres.sidebar.nocommit">Presupuesto sin
+                                    compromiso</span>
+                            </div>
+                            <div class="flex items-center gap-3 text-primary/70">
+                                <span class="material-symbols-outlined text-accent">local_activity</span>
+                                <span class="text-sm font-medium" data-i18n="pres.sidebar.quality">Calidad Premium
+                                    Garantizada</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-background-light p-6">
+                        <div class="flex items-center gap-4">
+                            <div class="size-12 rounded-full overflow-hidden border-2 border-white shadow-sm">
+                                <img class="w-full h-full object-cover"
+                                    data-alt="Professional property manager portrait smiling"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOrdQZMBVl06xYKymSpmUYh4WtnbeqUv34KcGWX_lW8kTsMILUtdSvB0seRuZJ_g-zpGHrgRcVB083hMTbydnPoKDsuBRmioYOLwPy_BMn0sPIXKlW_ZemHjC9YKrD0hGj9HJywHTjFNCSWef8kOFbGGqtKGWKsfAZY4zVGi_68bG_LnexTGIq5HJtwl0T0CR2B2SVo2ikPcTyYBQnnypT8M-EAmImFcpzZD7lhWKEX1TNzYwn9NciM1W58kgIPSmkV8CPPc8jXH99" />
+                            </div>
+                            <div>
+                                <p class="text-xs font-bold text-primary/40 uppercase" data-i18n="pres.sidebar.advisor">
+                                    Asesor Personal</p>
+                                <p class="text-sm font-bold text-primary">Sebastian</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Help Box -->
+                <div class="bg-accent/10 border border-accent/20 rounded-2xl p-6">
+                    <h5 class="text-primary font-bold mb-2" data-i18n="pres.help.title">¿Necesitas ayuda inmediata?</h5>
+                    <p class="text-sm text-primary/70 mb-4" data-i18n="pres.help.desc">Nuestro equipo en Palma está
+                        disponible para resolver tus
+                        dudas.</p>
+                    <a class="flex items-center justify-center gap-2 w-full py-3 bg-white border border-accent/30 rounded-xl text-accent font-bold hover:bg-accent hover:text-white transition-all"
+                        href="tel:+34675128916">
+                        <span class="material-symbols-outlined text-lg">call</span>
+                        +34 675 128 916
+                    </a>
+                </div>
+                <!-- Map Context -->
+                <div class="rounded-2xl overflow-hidden relative h-48 group">
+                    <img class="absolute inset-0 w-full h-full object-cover grayscale-[0.5] group-hover:grayscale-0 transition-all duration-700"
+                        data-alt="Aerial view of Mallorca Mediterranean coast" data-location="Mallorca"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMi5vq72fXdps2t7NmG4oDzNEzH2DhVMg4I-F1e1g2klIr6acx0eqjdqUkOCRmoImeHoLfnsFb5b9B8_oeMjrCGV9mhymAHMLNIv9cT87-aS1Xz2H2wFeY6AXPjFJmbCxJXXK_9Jay8ia_gM0Lm4TKfTUshVfzHFSnJyBqkqLpExkxkZjsnR8Jl_vwxW17FfJdFu9oBqz2RD35khL-RLVwlDzYZWToNIR9wmy-GhRWLHbVRMVjNEtTziPqI_9Ijd75b17_OcChuz38" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent"></div>
+                    <div class="absolute bottom-4 left-4">
+                        <p class="text-white text-xs font-bold uppercase tracking-widest" data-i18n="pres.map.label">
+                            Base de Operaciones</p>
+                        <p class="text-white font-serif italic text-lg leading-none">Palma de Mallorca</p>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </main>
+    <footer class="max-w-7xl mx-auto px-6 py-12 border-t border-primary/10 mt-20">
+        <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="flex items-center gap-3 opacity-50">
+                <img src="logo-nav.png" alt="VerdeAgua Logo" class="h-20 w-auto">
+            </div>
+            <p class="text-primary/40 text-sm" data-i18n="footer.rights">© 2026 VerdeAgua Premium Property Services
+                Mallorca. Todos los derechos
+                reservados.</p>
+            <div class="flex items-center gap-2 text-primary/40 text-sm">
+                <span data-i18n="footer.madeby">Página web realizada por:</span>
+                <a href="https://intuify.net" target="_blank" rel="noopener noreferrer"
+                    class="hover:opacity-80 transition-opacity">
+                    <img src="intuify-logo.webp" alt="Intuify" class="h-5 w-auto">
+                </a>
+            </div>
+            <div class="flex gap-6">
+                <a class="text-primary/40 hover:text-primary transition-colors text-sm" href="privacidad.html"
+                    data-i18n="footer.privacy">Privacidad</a>
+                <a class="text-primary/40 hover:text-primary transition-colors text-sm" href="aviso-legal.html"
+                    data-i18n="footer.terms">Términos</a>
+            </div>
+        </div>
+    </footer>
+    <script>
+            (function () {
+                let currentStep = 1;
+                const totalSteps = 4;
+                const stepDivs = [null, document.getElementById('step1'), document.getElementById('step2'), document.getElementById('step3'), document.getElementById('step4')];
+                const prevBtn = document.getElementById('prevBtn');
+                const nextBtn = document.getElementById('nextBtn');
+                const nextBtnText = document.getElementById('nextBtnText');
+                const stepperCircles = document.querySelectorAll('.flex.justify-between.relative > div');
+                const progressFill = document.querySelector('.absolute.top-9.left-0.h-1.bg-accent');
+
+                function goToStep(step) {
+                    // Hide all steps
+                    for (let i = 1; i <= totalSteps; i++) {
+                        stepDivs[i].style.display = 'none';
+                    }
+                    // Show target step
+                    stepDivs[step].style.display = '';
+                    currentStep = step;
+
+                    // Update prev button
+                    prevBtn.style.visibility = step === 1 ? 'hidden' : 'visible';
+
+                    // Update next button text
+                    if (step === totalSteps) {
+                        nextBtnText.textContent = 'Enviar solicitud';
+                        nextBtn.querySelector('.material-symbols-outlined').textContent = 'send';
+                    } else {
+                        nextBtnText.textContent = 'Siguiente paso';
+                        nextBtn.querySelector('.material-symbols-outlined').textContent = 'arrow_forward';
+                    }
+
+                    // Update progress stepper circles
+                    stepperCircles.forEach((circle, i) => {
+                        const dot = circle.querySelector('div');
+                        const label = circle.querySelector('span');
+                        if (i + 1 <= step) {
+                            dot.className = 'size-10 rounded-full bg-primary text-white flex items-center justify-center font-bold shadow-md';
+                            label.className = 'text-xs font-bold text-primary uppercase tracking-wider';
+                        } else {
+                            dot.className = 'size-10 rounded-full bg-white border-2 border-primary/20 text-primary/40 flex items-center justify-center font-bold';
+                            label.className = 'text-xs font-bold text-primary/40 uppercase tracking-wider';
+                        }
+                    });
+
+                    // Update progress bar fill
+                    progressFill.style.width = (step / totalSteps * 100) + '%';
+
+                    // Scroll to top
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+
+                // Next button
+                nextBtn.addEventListener('click', function () {
+                    // Validate step 1
+                    if (currentStep === 1) {
+                        const checked = document.querySelectorAll('.svc-checkbox:checked');
+                        if (checked.length === 0) {
+                            alert('Por favor, selecciona al menos un servicio.');
+                            return;
+                        }
+                    }
+                    // Validate step 3
+                    if (currentStep === 3) {
+                        const zona = document.getElementById('zonaSelect').value;
+                        const tipo = document.getElementById('tipoSelect').value;
+                        if (!zona) {
+                            alert('Por favor, selecciona un municipio o zona.');
+                            return;
+                        }
+                        if (!tipo) {
+                            alert('Por favor, selecciona el tipo de propiedad.');
+                            return;
+                        }
+                    }
+                    // Validate step 4 & submit
+                    if (currentStep === 4) {
+                        const nombre = document.getElementById('nombre').value.trim();
+                        const telefono = document.getElementById('telefono').value.trim();
+                        const email = document.getElementById('email').value.trim();
+                        if (!nombre || !telefono || !email) {
+                            alert('Por favor, completa los campos obligatorios: nombre, teléfono y email.');
+                            return;
+                        }
+
+                        // Disable button while sending
+                        nextBtn.disabled = true;
+                        nextBtnText.textContent = 'Enviando...';
+                        nextBtn.querySelector('.material-symbols-outlined').textContent = 'hourglass_empty';
+
+                        // Collect all form data
+                        const servicios = Array.from(document.querySelectorAll('.svc-checkbox:checked')).map(cb => cb.dataset.name).join(', ');
+                        const frecuencia = document.getElementById('freqSelect').value;
+                        const tamano = document.querySelector('.size-btn.border')?.textContent?.trim() || 'No seleccionado';
+                        const zona = document.getElementById('zonaSelect').value || 'No especificada';
+                        const tipoProp = document.getElementById('tipoSelect').value || 'No especificado';
+                        const direccion = document.getElementById('direccion').value.trim() || 'No proporcionada';
+                        const notas = document.getElementById('notas').value.trim() || 'Ninguna';
+                        const disponibilidad = document.getElementById('disponibilidad').value;
+
+                        // Build request body
+                        const body = {
+                            nombre, telefono, email, servicios, frecuencia,
+                            tamano, zona, tipoProp, direccion, notas, disponibilidad
+                        };
+
+                        // Send to server
+                        fetch('/api/presupuesto', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify(body)
+                        })
+                            .then(res => {
+                                if (!res.ok) throw new Error('Server error');
+                                return res.json();
+                            })
+                            .then(() => {
+                                // Show success
+                                const formArea = document.querySelector('.lg\\:col-span-2');
+                                formArea.innerHTML = `
+                            <div class="bg-white/50 border border-primary/5 rounded-2xl p-12 text-center space-y-6">
+                                <div class="size-20 rounded-full bg-primary/10 flex items-center justify-center mx-auto">
+                                    <span class="material-symbols-outlined text-5xl text-primary">check_circle</span>
+                                </div>
+                                <h2 class="serif-title text-3xl font-bold text-primary">¡Solicitud Enviada!</h2>
+                                <p class="text-lg text-primary/70 max-w-md mx-auto">Gracias, <strong>${nombre}</strong>. Hemos recibido tu solicitud. Nos pondremos en contacto contigo en menos de 24 horas.</p>
+                                <a href="index.html" class="inline-flex items-center gap-2 px-8 py-3 rounded-xl font-bold bg-primary text-white shadow-xl shadow-primary/30 hover:bg-primary/90 transition-all">
+                                    <span class="material-symbols-outlined text-lg">home</span>
+                                    Volver al inicio
+                                </a>
+                            </div>`;
+                            })
+                            .catch(error => {
+                                console.error('Error:', error);
+                                nextBtn.disabled = false;
+                                nextBtnText.textContent = 'Enviar solicitud';
+                                nextBtn.querySelector('.material-symbols-outlined').textContent = 'send';
+                                alert('Error al enviar la solicitud. Por favor, inténtalo de nuevo o llámanos al +34 675 128 916.');
+                            });
+                        return;
+                    }
+                    goToStep(currentStep + 1);
+                });
+
+                // Prev button
+                prevBtn.addEventListener('click', function () {
+                    if (currentStep > 1) goToStep(currentStep - 1);
+                });
+
+                // === Sidebar service sync ===
+                function updateSidebarServices() {
+                    const checked = document.querySelectorAll('.svc-checkbox:checked');
+                    const container = document.getElementById('sidebarServices');
+                    if (checked.length === 0) {
+                        container.innerHTML = '<p class="text-primary/40 text-sm mt-1">Ninguno seleccionado</p>';
+                    } else {
+                        container.innerHTML = Array.from(checked).map(cb =>
+                            `<p class="font-bold text-primary flex items-center gap-2"><span class="size-2 rounded-full bg-accent"></span>${cb.dataset.name}</p>`
+                        ).join('');
+                    }
+                }
+                document.querySelectorAll('.svc-checkbox').forEach(cb => cb.addEventListener('change', updateSidebarServices));
+
+                // === Sidebar frequency sync ===
+                document.getElementById('freqSelect').addEventListener('change', function () {
+                    document.getElementById('sidebarFreq').textContent = this.value.replace(' (Recomendado)', '').replace(' (Una sola vez)', '');
+                });
+
+                // === Tamaño buttons toggle ===
+                document.querySelectorAll('.size-btn').forEach(btn => {
+                    btn.addEventListener('click', function () {
+                        document.querySelectorAll('.size-btn').forEach(b => {
+                            b.className = 'size-btn flex-1 py-2 text-sm font-bold text-primary/60 hover:text-primary transition-colors';
+                        });
+                        this.className = 'size-btn flex-1 py-2 text-sm font-bold rounded-md bg-white text-primary shadow-sm border border-primary/10';
+                    });
+                });
+
+                // === File upload ===
+                const fileInput = document.getElementById('fileInput');
+                fileInput.addEventListener('change', function () {
+                    const fileList = document.getElementById('fileList');
+                    const uploadText = document.getElementById('uploadText');
+                    const uploadHint = document.getElementById('uploadHint');
+                    fileList.innerHTML = '';
+                    if (this.files.length > 0) {
+                        uploadText.textContent = this.files.length + ' archivo(s) seleccionado(s)';
+                        uploadHint.textContent = 'Haz clic para cambiar';
+                        Array.from(this.files).forEach(file => {
+                            const div = document.createElement('div');
+                            div.className = 'flex items-center gap-2 text-sm text-primary/70 bg-primary/5 px-3 py-2 rounded-lg';
+                            div.innerHTML = '<span class="material-symbols-outlined text-sm">image</span>' + file.name + ' (' + (file.size / 1024 / 1024).toFixed(1) + 'MB)';
+                            fileList.appendChild(div);
+                        });
+                    } else {
+                        uploadText.textContent = 'Sube tus fotos aquí';
+                        uploadHint.textContent = 'JPG, PNG hasta 10MB cada una';
+                    }
+                });
+
+                // === Sidebar pencil: scroll & go to step ===
+                document.querySelectorAll('[onclick*="serviceGrid"]').forEach(btn => {
+                    btn.removeAttribute('onclick');
+                    btn.addEventListener('click', () => { goToStep(1); });
+                });
+                document.querySelectorAll('[onclick*="freqSelect"]').forEach(btn => {
+                    btn.removeAttribute('onclick');
+                    btn.addEventListener('click', () => { goToStep(2); });
+                });
+            })();
+    </script>
+
+    <!-- Cookie Consent Banner -->
+    <div id="cookieBanner" class="fixed bottom-0 left-0 right-0 z-[998] transition-transform duration-500"
+        style="transform: translateY(100%);">
+        <div class="max-w-5xl mx-auto px-4 pb-4">
+            <div
+                class="bg-charcoal text-white rounded-2xl shadow-2xl p-6 md:flex md:items-center md:gap-6 border border-white/10">
+                <div class="flex items-start gap-4 flex-1 mb-4 md:mb-0">
+                    <span class="material-symbols-outlined text-3xl text-primary mt-0.5">cookie</span>
+                    <div>
+                        <h3 class="font-bold text-lg mb-1" data-i18n="cookie.title">Utilizamos cookies 🍪</h3>
+                        <p class="text-white/60 text-sm leading-relaxed"><span data-i18n="cookie.desc">Usamos cookies
+                                para mejorar tu experiencia.</span> <a href="cookies.html"
+                                class="text-primary underline hover:text-primary/80" data-i18n="cookie.more">Más
+                                información</a></p>
+                    </div>
+                </div>
+                <div class="flex flex-col sm:flex-row gap-2 shrink-0">
+                    <button onclick="rejectCookies()"
+                        class="px-6 py-2.5 rounded-lg border border-white/20 text-white/70 text-sm font-semibold hover:bg-white/10 transition-all"
+                        data-i18n="cookie.reject">Rechazar</button>
+                    <button onclick="acceptCookies()"
+                        class="px-6 py-2.5 rounded-lg bg-primary text-white text-sm font-bold hover:bg-primary/90 transition-all shadow-lg shadow-primary/30"
+                        data-i18n="cookie.accept">Aceptar
+                        todo</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        (function () { var c = localStorage.getItem('va_cookies'); if (!c) { setTimeout(() => { document.getElementById('cookieBanner').style.transform = 'translateY(0)'; }, 1500); } })();
+        function acceptCookies() { localStorage.setItem('va_cookies', 'accepted'); document.getElementById('cookieBanner').style.transform = 'translateY(100%)'; }
+        function rejectCookies() { localStorage.setItem('va_cookies', 'rejected'); document.getElementById('cookieBanner').style.transform = 'translateY(100%)'; }
+    </script>
+    <script src="translations-pages.js"></script>
+</body>
+
+</html>

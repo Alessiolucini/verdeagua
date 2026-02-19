@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Política de Privacidad | VerdeAgua</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { "primary": "#2d5016", "background-light": "#faf8f5", "sandstone": "#f0ebe3", "charcoal": "#1a1a1a" },
+                    fontFamily: { "display": ["Inter", "sans-serif"], "serif": ["Playfair Display", "serif"] },
+                },
+            },
+        }
+    </script>
+    <style>
+        .serif-text {
+            font-family: 'Playfair Display', serif;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+
+<body class="bg-background-light text-charcoal">
+
+    <!-- Navigation -->
+    <nav class="bg-white/90 backdrop-blur-md border-b border-primary/10 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-3">
+                <img src="logo-nav-dark.png" alt="VerdeAgua" class="h-10">
+            </a>
+            <div class="flex items-center gap-2 sm:gap-4 flex-wrap">
+                <div class="flex items-center gap-1">
+                    <button class="lang-flag text-lg cursor-pointer hover:scale-125 transition-transform" data-lang="es"
+                        onclick="setPageLang('es')">🇪🇸</button>
+                    <button class="lang-flag text-lg cursor-pointer hover:scale-125 transition-transform" data-lang="en"
+                        onclick="setPageLang('en')">🇬🇧</button>
+                    <button class="lang-flag text-lg cursor-pointer hover:scale-125 transition-transform" data-lang="de"
+                        onclick="setPageLang('de')">🇩🇪</button>
+                    <button class="lang-flag text-lg cursor-pointer hover:scale-125 transition-transform" data-lang="fr"
+                        onclick="setPageLang('fr')">🇫🇷</button>
+                    <button class="lang-flag text-lg cursor-pointer hover:scale-125 transition-transform" data-lang="it"
+                        onclick="setPageLang('it')">🇮🇹</button>
+                </div>
+                <a href="index.html"
+                    class="flex items-center gap-2 text-primary font-bold hover:text-primary/70 transition-colors">
+                    <span class="material-symbols-outlined">arrow_back</span>
+                    <span data-i18n="back">Volver al inicio</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Content -->
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 py-8 sm:py-16">
+        <div class="mb-8 sm:mb-12">
+            <h1 class="serif-text text-2xl sm:text-4xl font-bold text-primary mb-4" data-i18n="priv.title">Política de
+                Privacidad
+            </h1>
+            <p class="text-charcoal/50 text-sm" data-i18n="priv.updated">Última actualización: Febrero 2026</p>
+        </div>
+
+        <div class="space-y-10 text-charcoal/80 leading-relaxed">
+
+            <section>
+                <h2 class="text-xl font-bold text-primary mb-4" data-i18n="priv.s1">1. Responsable del tratamiento</h2>
+                <div class="bg-sandstone/50 rounded-xl p-6 space-y-2">
+                    <p><strong data-i18n="priv.s1.resp">Responsable:</strong> VerdeAgua Premium Property Services</p>
+                    <p><strong data-i18n="priv.s1.email">Email de contacto:</strong> <a
+                            href="mailto:info@verdeaguamallorca.es"
+                            class="text-primary font-semibold hover:underline">info@verdeaguamallorca.es</a></p>
+                    <p><strong data-i18n="priv.s1.purpose">Finalidad:</strong> <span
+                            data-i18n="priv.s1.purposeVal">Gestión de solicitudes de presupuesto y comunicaciones
+                            comerciales.</span></p>
+                </div>
+            </section>
+
+            <section>
+                <h2 class="text-xl font-bold text-primary mb-4" data-i18n="priv.s2">2. Datos que recopilamos</h2>
+                <p data-i18n="priv.s2.intro">Recopilamos los datos personales que usted nos proporciona voluntariamente
+                    a través de nuestros
+                    formularios de contacto y solicitud de presupuesto:</p>
+                <ul class="mt-4 space-y-3">
+                    <li class="flex items-start gap-3">
+                        <span class="material-symbols-outlined text-primary text-lg mt-0.5">check_circle</span>
+                        <span><strong>Nombre completo:</strong> para personalizar nuestras comunicaciones y
+                            presupuestos.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="material-symbols-outlined text-primary text-lg mt-0.5">check_circle</span>
+                        <span><strong>Teléfono:</strong> para contactarle y coordinar visitas o servicios.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="material-symbols-outlined text-primary text-lg mt-0.5">check_circle</span>
+                        <span><strong>Correo electrónico:</strong> para enviarle presupuestos e información
+                            relevante.</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="material-symbols-outlined text-primary text-lg mt-0.5">check_circle</span>
+                        <span><strong>Dirección de la propiedad:</strong> para evaluar y presupuestar los servicios
+                            solicitados.</span>
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <h2 class="text-xl font-bold text-primary mb-4" data-i18n="priv.s3">3. Finalidad del tratamiento</h2>
+                <p data-i18n="priv.s3.intro">Los datos personales facilitados serán tratados con las siguientes
+                    finalidades:</p>
+                <div class="mt-4 grid gap-4 md:grid-cols-2">
+                    <div class="bg-sandstone/50 rounded-xl p-5">
+                        <h3 class="font-bold text-primary mb-2">📋 Gestión de solicitudes</h3>
+                        <p class="text-sm">Atender y responder a sus solicitudes de presupuesto e información sobre
+                            nuestros servicios.</p>
+                    </div>
+                    <div class="bg-sandstone/50 rounded-xl p-5">
+                        <h3 class="font-bold text-primary mb-2">📞 Comunicación</h3>
+                        <p class="text-sm">Contactarle para coordinar visitas, enviar presupuestos y dar seguimiento a
+                            los servicios.</p>
+                    </div>
+                    <div class="bg-sandstone/50 rounded-xl p-5">
+                        <h3 class="font-bold text-primary mb-2">📊 Mejora del servicio</h3>
+                        <p class="text-sm">Analizar las solicitudes recibidas para mejorar la calidad de nuestros
+                            servicios.</p>
+                    </div>
+                    <div class="bg-sandstone/50 rounded-xl p-5">
+                        <h3 class="font-bold text-primary mb-2">📧 Comunicaciones comerciales</h3>
+                        <p class="text-sm">Envío de ofertas y novedades, solo con su consentimiento previo.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2 class="text-xl font-bold text-primary mb-4" data-i18n="priv.s4">4. Base legal</h2>
+                <p>El tratamiento de sus datos personales se fundamenta en:</p>
+                <ul class="mt-3 space-y-2 list-disc list-inside">
+                    <li>Su <strong>consentimiento</strong> al enviar los formularios de contacto.</li>
+                    <li>La ejecución de un <strong>contrato</strong> o la adopción de medidas precontractuales.</li>
+                    <li>Nuestro <strong>interés legítimo</strong> en mejorar nuestros servicios.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2 class="text-xl font-bold text-primary mb-4" data-i18n="priv.s5">5. Conservación de datos</h2>
+                <p>Los datos personales proporcionados se conservarán mientras se mantenga la relación comercial o
+                    durante el tiempo necesario para cumplir con las obligaciones legales. Podrá solicitar su supresión
+                    en cualquier momento.</p>
+            </section>
+
+            <section>
+                <h2 class="text-xl font-bold text-primary mb-4" data-i18n="priv.s6">6. Destinatarios</h2>
+                <p>No se cederán datos a terceros, salvo obligación legal. No se realizan transferencias internacionales
+                    de datos.</p>
+            </section>
+
+            <section>
+                <h2 class="text-xl font-bold text-primary mb-4" data-i18n="priv.s7">7. Derechos del interesado</h2>
+                <p data-i18n="priv.s7.intro">Usted tiene derecho a:</p>
+                <div class="mt-4 bg-sandstone/50 rounded-xl p-6">
+                    <ul class="space-y-3">
+                        <li class="flex items-start gap-3">
+                            <span class="material-symbols-outlined text-primary">verified</span>
+                            <span><strong>Acceso:</strong> conocer qué datos personales tratamos sobre usted.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="material-symbols-outlined text-primary">edit</span>
+                            <span><strong>Rectificación:</strong> solicitar la corrección de datos inexactos.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="material-symbols-outlined text-primary">delete</span>
+                            <span><strong>Supresión:</strong> solicitar la eliminación de sus datos personales.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="material-symbols-outlined text-primary">block</span>
+                            <span><strong>Oposición:</strong> oponerse al tratamiento de sus datos.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="material-symbols-outlined text-primary">download</span>
+                            <span><strong>Portabilidad:</strong> recibir sus datos en un formato estructurado.</span>
+                        </li>
+                    </ul>
+                    <p class="mt-4 text-sm">Para ejercer estos derechos, envíe un correo a <a
+                            href="mailto:info@verdeaguamallorca.es"
+                            class="text-primary font-bold hover:underline">info@verdeaguamallorca.es</a>.</p>
+                </div>
+            </section>
+
+            <section>
+                <h2 class="text-xl font-bold text-primary mb-4" data-i18n="priv.s8">8. Seguridad</h2>
+                <p>VerdeAgua adopta las medidas técnicas y organizativas necesarias para garantizar la seguridad de los
+                    datos personales y evitar su alteración, pérdida, tratamiento o acceso no autorizado.</p>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-charcoal text-white/60 py-8">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4 text-xs">
+            <p data-i18n="footer.rights">© 2026 VerdeAgua Luxury Property Services. Todos los derechos reservados.</p>
+            <div class="flex gap-6">
+                <a class="hover:text-white" href="aviso-legal.html" data-i18n="footer.legal">Aviso Legal</a>
+                <a class="text-white/80 font-semibold" href="privacidad.html" data-i18n="footer.privacy">Privacidad</a>
+                <a class="hover:text-white" href="cookies.html">Cookies</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="translations-pages.js"></script>
+</body>
+
+</html>

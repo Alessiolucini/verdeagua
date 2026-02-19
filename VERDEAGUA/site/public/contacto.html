@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Contacto | VerdeAgua Paisajismo & Mantenimiento en Mallorca</title>
+    <meta name="description"
+        content="Contacta con VerdeAgua para servicios de paisajismo y mantenimiento de propiedades de lujo en Mallorca. Solicita tu presupuesto.">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#2d5016",
+                        "background-light": "#faf8f5",
+                        "sandstone": "#f0ebe3",
+                        "charcoal": "#1a1a1a"
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "serif": ["Playfair Display", "serif"]
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        .serif-text {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .glass-nav {
+            background: rgba(250, 248, 245, 0.8);
+            backdrop-filter: blur(12px);
+        }
+
+        .mobile-menu {
+            position: fixed;
+            inset: 0;
+            z-index: 60;
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .mobile-menu.open {
+            transform: translateX(0);
+        }
+
+        .mobile-menu-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 59;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .mobile-menu-overlay.open {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .hamburger-btn {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+        }
+
+        .hamburger-btn span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: #2d5016;
+            margin: 5px 0;
+            transition: all 0.3s ease;
+            border-radius: 2px;
+        }
+
+        @media (max-width: 1023px) {
+            .hamburger-btn {
+                display: block;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-background-light text-charcoal font-display selection:bg-primary/20">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 border-b border-primary/5 glass-nav">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 flex items-center justify-between h-16 sm:h-20">
+            <a href="index.html" class="flex-shrink-0">
+                <img src="logo-nav.png" alt="VerdeAgua Logo"
+                    class="h-10 sm:h-16 w-auto transition-transform hover:scale-105">
+            </a>
+            <div class="hidden lg:flex items-center gap-10">
+                <a class="text-sm font-medium hover:text-primary transition-colors" href="index.html"
+                    data-i18n="nav.inicio">Inicio</a>
+                <a class="text-sm font-medium hover:text-primary transition-colors" href="index.html#servicios"
+                    data-i18n="nav.servicios">Servicios</a>
+                <a class="text-sm font-medium hover:text-primary transition-colors" href="presupuesto.html"
+                    data-i18n="nav.presupuesto">Presupuesto</a>
+            </div>
+            <div class="flex items-center gap-2 sm:gap-3">
+                <div class="hidden md:flex items-center gap-1 text-xs">
+                    <button data-lang-btn="es" onclick="switchLanguage('es')"
+                        class="w-8 h-6 rounded overflow-hidden opacity-60 hover:opacity-100 transition-opacity"
+                        title="Español">🇪🇸</button>
+                    <button data-lang-btn="en" onclick="switchLanguage('en')"
+                        class="w-8 h-6 rounded overflow-hidden opacity-60 hover:opacity-100 transition-opacity"
+                        title="English">🇬🇧</button>
+                    <button data-lang-btn="de" onclick="switchLanguage('de')"
+                        class="w-8 h-6 rounded overflow-hidden opacity-60 hover:opacity-100 transition-opacity"
+                        title="Deutsch">🇩🇪</button>
+                    <button data-lang-btn="fr" onclick="switchLanguage('fr')"
+                        class="w-8 h-6 rounded overflow-hidden opacity-60 hover:opacity-100 transition-opacity"
+                        title="Français">🇫🇷</button>
+                    <button data-lang-btn="it" onclick="switchLanguage('it')"
+                        class="w-8 h-6 rounded overflow-hidden opacity-60 hover:opacity-100 transition-opacity"
+                        title="Italiano">🇮🇹</button>
+                </div>
+                <a href="presupuesto.html"
+                    class="hidden sm:inline-block bg-primary text-white px-4 sm:px-6 py-2 sm:py-2.5 rounded-lg text-xs sm:text-sm font-bold tracking-wide hover:bg-primary/90 transition-all shadow-sm no-underline"
+                    data-i18n="nav.cta">
+                    Solicitar Presupuesto
+                </a>
+                <button class="hamburger-btn lg:hidden" onclick="toggleMobileMenu()" aria-label="Menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobileMenuOverlay" class="mobile-menu-overlay" onclick="toggleMobileMenu()"></div>
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="mobile-menu bg-background-light">
+        <div class="flex items-center justify-between p-6 border-b border-primary/10">
+            <img src="logo-nav.png" alt="VerdeAgua" class="h-10">
+            <button onclick="toggleMobileMenu()" class="text-charcoal p-2">
+                <span class="material-symbols-outlined text-2xl">close</span>
+            </button>
+        </div>
+        <div class="p-6 space-y-6">
+            <a href="index.html"
+                class="block text-lg font-semibold text-primary hover:text-primary/70 transition-colors"
+                data-i18n="nav.inicio">Inicio</a>
+            <a href="index.html#servicios" onclick="toggleMobileMenu()"
+                class="block text-lg font-semibold text-primary hover:text-primary/70 transition-colors"
+                data-i18n="nav.servicios">Servicios</a>
+            <a href="presupuesto.html"
+                class="block text-lg font-semibold text-primary hover:text-primary/70 transition-colors"
+                data-i18n="nav.presupuesto">Presupuesto</a>
+            <hr class="border-primary/10">
+            <div class="flex items-center gap-3">
+                <button data-lang-btn="es" onclick="switchLanguage('es')"
+                    class="text-2xl opacity-60 hover:opacity-100 transition-opacity">🇪🇸</button>
+                <button data-lang-btn="en" onclick="switchLanguage('en')"
+                    class="text-2xl opacity-60 hover:opacity-100 transition-opacity">🇬🇧</button>
+                <button data-lang-btn="de" onclick="switchLanguage('de')"
+                    class="text-2xl opacity-60 hover:opacity-100 transition-opacity">🇩🇪</button>
+                <button data-lang-btn="fr" onclick="switchLanguage('fr')"
+                    class="text-2xl opacity-60 hover:opacity-100 transition-opacity">🇫🇷</button>
+                <button data-lang-btn="it" onclick="switchLanguage('it')"
+                    class="text-2xl opacity-60 hover:opacity-100 transition-opacity">🇮🇹</button>
+            </div>
+            <a href="presupuesto.html"
+                class="block w-full text-center bg-primary text-white px-6 py-3 rounded-lg font-bold hover:bg-primary/90 transition-all no-underline"
+                data-i18n="nav.cta">Solicitar Presupuesto</a>
+        </div>
+    </div>
+
+    <script>
+        function toggleMobileMenu() {
+            document.getElementById('mobileMenu').classList.toggle('open');
+            document.getElementById('mobileMenuOverlay').classList.toggle('open');
+            document.body.style.overflow = document.getElementById('mobileMenu').classList.contains('open') ? 'hidden' : '';
+        }
+    </script>
+
+    <!-- Hero Banner -->
+    <section class="relative pt-24 sm:pt-32 pb-12 sm:pb-20 bg-primary overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-10 right-10"><span
+                    class="material-symbols-outlined text-[200px] sm:text-[300px]">forest</span></div>
+            <div class="absolute bottom-0 left-0"><span
+                    class="material-symbols-outlined text-[150px] sm:text-[200px]">eco</span></div>
+        </div>
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 text-center">
+            <h1 class="serif-text text-white text-3xl sm:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6"
+                data-i18n="contact.hero.title">
+                Hablemos de tu proyecto
+            </h1>
+            <p class="text-white/80 text-base sm:text-lg lg:text-xl max-w-2xl mx-auto leading-relaxed"
+                data-i18n="contact.hero.subtitle">
+                Estamos a tu disposición para transformar tu propiedad en el paraíso mediterráneo que imaginas.
+            </p>
+        </div>
+    </section>
+
+    <!-- Contact Content -->
+    <section class="py-12 sm:py-24 bg-background-light" id="contacto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-16">
+
+                <!-- Left: Contact Info -->
+                <div class="space-y-8 sm:space-y-10">
+                    <div>
+                        <h2 class="serif-text text-2xl sm:text-3xl font-bold text-primary mb-3 sm:mb-4"
+                            data-i18n="contact.info.title">Información de Contacto</h2>
+                        <p class="text-charcoal/60 leading-relaxed" data-i18n="contact.info.desc">
+                            Puede contactarnos por teléfono, email o a través del formulario. Nos comprometemos a
+                            responder en menos de 24 horas.
+                        </p>
+                    </div>
+
+                    <!-- Contact Cards -->
+                    <div class="space-y-4">
+                        <div
+                            class="bg-white rounded-xl p-5 sm:p-6 shadow-sm border border-primary/5 flex items-start gap-4 hover:shadow-md transition-shadow">
+                            <div
+                                class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                                <span class="material-symbols-outlined text-primary text-xl">call</span>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-sm uppercase tracking-wider text-primary mb-1"
+                                    data-i18n="contact.phone.label">Teléfono</h3>
+                                <a href="tel:+34675128916"
+                                    class="text-lg font-semibold text-charcoal hover:text-primary transition-colors">+34
+                                    675 128 916</a>
+                                <p class="text-charcoal/40 text-sm mt-1" data-i18n="contact.phone.hours">Lun – Sáb ·
+                                    8:00 – 19:00</p>
+                            </div>
+                        </div>
+
+                        <div
+                            class="bg-white rounded-xl p-5 sm:p-6 shadow-sm border border-primary/5 flex items-start gap-4 hover:shadow-md transition-shadow">
+                            <div
+                                class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                                <span class="material-symbols-outlined text-primary text-xl">mail</span>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-sm uppercase tracking-wider text-primary mb-1">Email</h3>
+                                <a href="mailto:info@verdeaguamallorca.es"
+                                    class="text-lg font-semibold text-charcoal hover:text-primary transition-colors break-all">info@verdeaguamallorca.es</a>
+                                <p class="text-charcoal/40 text-sm mt-1" data-i18n="contact.email.response">Respuesta en
+                                    menos de 24h</p>
+                            </div>
+                        </div>
+
+                        <div
+                            class="bg-white rounded-xl p-5 sm:p-6 shadow-sm border border-primary/5 flex items-start gap-4 hover:shadow-md transition-shadow">
+                            <div
+                                class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                                <span class="material-symbols-outlined text-primary text-xl">location_on</span>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-sm uppercase tracking-wider text-primary mb-1"
+                                    data-i18n="contact.location.label">Ubicación</h3>
+                                <p class="text-lg font-semibold text-charcoal">Palma, Illes Balears</p>
+                                <p class="text-charcoal/40 text-sm mt-1" data-i18n="contact.location.coverage">Servicio
+                                    en toda la isla de Mallorca</p>
+                            </div>
+                        </div>
+
+                        <div
+                            class="bg-white rounded-xl p-5 sm:p-6 shadow-sm border border-primary/5 flex items-start gap-4 hover:shadow-md transition-shadow">
+                            <div
+                                class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                                <span class="material-symbols-outlined text-primary text-xl">schedule</span>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-sm uppercase tracking-wider text-primary mb-1"
+                                    data-i18n="contact.schedule.label">Horarios</h3>
+                                <p class="text-charcoal font-semibold" data-i18n="contact.schedule.weekdays">Lunes –
+                                    Viernes: 8:00 – 19:00</p>
+                                <p class="text-charcoal/60 text-sm" data-i18n="contact.schedule.saturday">Sábados: 9:00
+                                    – 14:00</p>
+                                <p class="text-charcoal/40 text-sm" data-i18n="contact.schedule.emergency">Urgencias:
+                                    24/7 para clientes con plan</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Contact Form -->
+                <div>
+                    <div class="bg-white rounded-2xl shadow-lg border border-primary/5 overflow-hidden">
+                        <div class="bg-primary p-6 sm:p-8">
+                            <h2 class="serif-text text-white text-2xl sm:text-3xl font-bold"
+                                data-i18n="contact.form.title">Envíanos un mensaje</h2>
+                            <p class="text-white/70 mt-2 text-sm sm:text-base" data-i18n="contact.form.subtitle">
+                                Cuéntanos tu proyecto y te contactaremos pronto.</p>
+                        </div>
+                        <form id="contactForm" class="p-6 sm:p-8 space-y-5">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div class="space-y-1">
+                                    <label class="text-xs font-bold text-primary uppercase tracking-wider"
+                                        data-i18n="contact.form.name">Nombre *</label>
+                                    <input type="text" id="contactName" required placeholder="Tu nombre"
+                                        class="w-full bg-sandstone/30 border border-primary/10 rounded-lg py-3 px-4 focus:ring-primary focus:border-primary transition-all text-sm" />
+                                </div>
+                                <div class="space-y-1">
+                                    <label class="text-xs font-bold text-primary uppercase tracking-wider"
+                                        data-i18n="contact.form.surname">Apellidos *</label>
+                                    <input type="text" id="contactSurname" required placeholder="Tus apellidos"
+                                        class="w-full bg-sandstone/30 border border-primary/10 rounded-lg py-3 px-4 focus:ring-primary focus:border-primary transition-all text-sm" />
+                                </div>
+                            </div>
+                            <div class="space-y-1">
+                                <label class="text-xs font-bold text-primary uppercase tracking-wider">Email *</label>
+                                <input type="email" id="contactEmail" required placeholder="tu@email.com"
+                                    class="w-full bg-sandstone/30 border border-primary/10 rounded-lg py-3 px-4 focus:ring-primary focus:border-primary transition-all text-sm" />
+                            </div>
+                            <div class="space-y-1">
+                                <label class="text-xs font-bold text-primary uppercase tracking-wider"
+                                    data-i18n="contact.form.phone">Teléfono</label>
+                                <input type="tel" id="contactPhone" placeholder="+34 600 000 000"
+                                    class="w-full bg-sandstone/30 border border-primary/10 rounded-lg py-3 px-4 focus:ring-primary focus:border-primary transition-all text-sm" />
+                            </div>
+                            <div class="space-y-1">
+                                <label class="text-xs font-bold text-primary uppercase tracking-wider"
+                                    data-i18n="contact.form.service">Servicio de interés</label>
+                                <select id="contactService"
+                                    class="w-full bg-sandstone/30 border border-primary/10 rounded-lg py-3 px-4 focus:ring-primary focus:border-primary transition-all text-sm">
+                                    <option value="" data-i18n="contact.form.serviceDefault">Seleccionar...</option>
+                                    <option value="jardineria" data-i18n="contact.form.svc1">Jardinería y Paisajismo
+                                    </option>
+                                    <option value="piscina" data-i18n="contact.form.svc2">Cuidado de Piscinas</option>
+                                    <option value="reformas" data-i18n="contact.form.svc3">Reformas y Albañilería
+                                    </option>
+                                    <option value="gestion" data-i18n="contact.form.svc4">Gestión de Propiedades
+                                    </option>
+                                    <option value="mantenimiento" data-i18n="contact.form.svc5">Plan de Mantenimiento
+                                    </option>
+                                    <option value="otro" data-i18n="contact.form.svc6">Otro</option>
+                                </select>
+                            </div>
+                            <div class="space-y-1">
+                                <label class="text-xs font-bold text-primary uppercase tracking-wider"
+                                    data-i18n="contact.form.message">Mensaje *</label>
+                                <textarea id="contactMessage" required rows="4"
+                                    placeholder="Cuéntanos sobre tu proyecto..."
+                                    class="w-full bg-sandstone/30 border border-primary/10 rounded-lg py-3 px-4 focus:ring-primary focus:border-primary transition-all text-sm resize-none"></textarea>
+                            </div>
+                            <button type="submit" id="contactSubmitBtn"
+                                class="w-full flex items-center justify-center gap-2 bg-primary text-white font-bold py-4 rounded-lg hover:bg-primary/90 transition-all text-base sm:text-lg shadow-lg shadow-primary/20">
+                                <span class="material-symbols-outlined">send</span>
+                                <span id="contactSubmitText" data-i18n="contact.form.send">Enviar Mensaje</span>
+                            </button>
+                            <p class="text-xs text-charcoal/40 text-center" data-i18n="contact.form.privacy">
+                                Al enviar aceptas nuestra <a href="privacidad.html"
+                                    class="text-primary underline">Política de Privacidad</a>.
+                            </p>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="bg-sandstone py-12 sm:py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
+            <h2 class="serif-text text-2xl sm:text-3xl font-bold text-primary text-center mb-8"
+                data-i18n="contact.map.title">Nuestra zona de cobertura</h2>
+            <div class="rounded-2xl overflow-hidden shadow-lg border border-primary/5 h-[300px] sm:h-[400px]">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d197672.8893747!2d2.5041513!3d39.6152778!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1297892314a4f103%3A0x53c89b9f4b50d97!2sPalma%2C%20Illes%20Balears!5e0!3m2!1ses!2ses!4v1708000000000!5m2!1ses!2ses"
+                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-charcoal text-white pt-12 sm:pt-24 pb-8 sm:pb-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12 mb-10 sm:mb-20">
+                <div>
+                    <div class="flex items-center gap-3 mb-8">
+                        <img src="logo-nav.png" alt="VerdeAgua Logo" class="h-20 w-auto">
+                    </div>
+                    <p class="text-white/40 leading-relaxed mb-6" data-i18n="footer.desc">Excelencia en servicios de
+                        propiedad de
+                        lujo. Especialistas en el mantenimiento de los jardines y villas más exclusivas de Mallorca.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-8 uppercase tracking-widest text-sm text-primary"
+                        data-i18n="footer.services">Servicios</h4>
+                    <ul class="space-y-4 text-white/50 text-sm">
+                        <li><a class="hover:text-white transition-colors" href="index.html#servicios"
+                                data-i18n="footer.svc.1">Paisajismo & Jardín</a></li>
+                        <li><a class="hover:text-white transition-colors" href="#" data-i18n="footer.svc.2">Cuidado de
+                                Piscinas</a></li>
+                        <li><a class="hover:text-white transition-colors" href="#" data-i18n="footer.svc.3">Reformas y
+                                Albañilería</a></li>
+                        <li><a class="hover:text-white transition-colors" href="#" data-i18n="footer.svc.4">Gestión de
+                                Propiedades</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-8 uppercase tracking-widest text-sm text-primary"
+                        data-i18n="footer.contact">Contacto Palma</h4>
+                    <ul class="space-y-4 text-white/50 text-sm">
+                        <li class="flex items-start gap-3">
+                            <span class="material-symbols-outlined text-primary text-lg">location_on</span>
+                            Palma, Illes Balears
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span class="material-symbols-outlined text-primary text-lg">call</span>
+                            +34 675 128 916
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span class="material-symbols-outlined text-primary text-lg">mail</span>
+                            info@verdeaguamallorca.es
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-8 uppercase tracking-widest text-sm text-primary"
+                        data-i18n="footer.newsletter">Newsletter</h4>
+                    <p class="text-white/40 text-xs mb-4" data-i18n="footer.newsletter.desc">Reciba consejos sobre el
+                        cuidado del jardín mediterráneo.</p>
+                    <div class="flex">
+                        <input
+                            class="bg-white/5 border-none rounded-l-lg focus:ring-1 focus:ring-primary text-sm w-full"
+                            placeholder="Email" type="email" />
+                        <button class="bg-primary px-4 rounded-r-lg hover:bg-primary/80 transition-all">
+                            <span class="material-symbols-outlined">send</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-white/30">
+                <p data-i18n="footer.rights">© 2026 VerdeAgua Luxury Property Services. Todos los derechos reservados.
+                </p>
+                <div class="flex items-center gap-2">
+                    <span data-i18n="footer.madeby">Página web realizada por:</span>
+                    <a href="https://intuify.net" target="_blank" rel="noopener noreferrer"
+                        class="hover:opacity-80 transition-opacity">
+                        <img src="intuify-logo.webp" alt="Intuify" class="h-5 w-auto">
+                    </a>
+                </div>
+                <div class="flex flex-wrap gap-4 sm:gap-6 justify-center md:justify-start">
+                    <a class="hover:text-white" href="aviso-legal.html" data-i18n="footer.legal">Aviso Legal</a>
+                    <a class="hover:text-white" href="privacidad.html" data-i18n="footer.privacy">Privacidad</a>
+                    <a class="hover:text-white" href="cookies.html">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cookie Consent Banner -->
+    <div id="cookieBanner" class="fixed bottom-0 w-full z-[100] transition-transform duration-500"
+        style="transform: translateY(100%);">
+        <div class="max-w-5xl mx-auto px-4 pb-4">
+            <div
+                class="bg-charcoal text-white rounded-2xl shadow-2xl p-6 md:flex md:items-center md:gap-6 border border-white/10">
+                <div class="flex items-start gap-4 flex-1 mb-4 md:mb-0">
+                    <span class="material-symbols-outlined text-3xl text-primary mt-0.5">cookie</span>
+                    <div>
+                        <h3 class="font-bold text-lg mb-1" data-i18n="cookie.title">Utilizamos cookies 🍪</h3>
+                        <p class="text-white/60 text-sm leading-relaxed"><span data-i18n="cookie.desc">Usamos cookies
+                                propias y de terceros para mejorar tu experiencia de navegación.</span> <a
+                                href="cookies.html" class="text-primary underline hover:text-primary/80"
+                                data-i18n="cookie.more">Más información</a></p>
+                    </div>
+                </div>
+                <div class="flex flex-col sm:flex-row gap-2 shrink-0">
+                    <button onclick="rejectCookies()"
+                        class="px-6 py-2.5 rounded-lg border border-white/20 text-white/70 text-sm font-semibold hover:bg-white/10 transition-all"
+                        data-i18n="cookie.reject">Rechazar</button>
+                    <button onclick="acceptCookies()"
+                        class="px-6 py-2.5 rounded-lg bg-primary text-white text-sm font-bold hover:bg-primary/90 transition-all shadow-lg shadow-primary/30"
+                        data-i18n="cookie.accept">Aceptar todo</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Cookie consent
+        (function () {
+            const consent = localStorage.getItem('va_cookies');
+            if (!consent) {
+                setTimeout(() => {
+                    document.getElementById('cookieBanner').style.transform = 'translateY(0)';
+                }, 1500);
+            }
+        })();
+        function acceptCookies() {
+            localStorage.setItem('va_cookies', 'accepted');
+            document.getElementById('cookieBanner').style.transform = 'translateY(100%)';
+        }
+        function rejectCookies() {
+            localStorage.setItem('va_cookies', 'rejected');
+            document.getElementById('cookieBanner').style.transform = 'translateY(100%)';
+        }
+
+        // Contact form submission
+        document.getElementById('contactForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const name = document.getElementById('contactName').value.trim();
+            const surname = document.getElementById('contactSurname').value.trim();
+            const email = document.getElementById('contactEmail').value.trim();
+            const phone = document.getElementById('contactPhone').value.trim();
+            const service = document.getElementById('contactService').value;
+            const message = document.getElementById('contactMessage').value.trim();
+
+            if (!name || !email || !message) return;
+
+            const btn = document.getElementById('contactSubmitBtn');
+            const btnText = document.getElementById('contactSubmitText');
+            btn.disabled = true;
+            btnText.textContent = 'Enviando...';
+
+            fetch('/api/contacto', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ nombre: name, apellidos: surname, email, telefono: phone, servicio: service, mensaje: message })
+            })
+                .then(res => {
+                    if (!res.ok) throw new Error('Error');
+                    return res.json();
+                })
+                .then(() => {
+                    document.getElementById('contactForm').innerHTML = `
+                <div class="text-center py-8 space-y-4">
+                    <div class="size-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto">
+                        <span class="material-symbols-outlined text-4xl text-primary">check_circle</span>
+                    </div>
+                    <h4 class="text-xl font-bold text-primary" data-i18n="contact.form.success">¡Mensaje Enviado!</h4>
+                    <p class="text-charcoal/60" data-i18n="contact.form.successDesc">Gracias por contactarnos. Te responderemos en menos de 24 horas.</p>
+                    <a href="index.html" class="inline-block mt-2 px-8 py-3 bg-primary text-white font-bold rounded-lg hover:bg-primary/90 transition-all no-underline" data-i18n="contact.form.backHome">Volver al inicio</a>
+                </div>`;
+                })
+                .catch(() => {
+                    btn.disabled = false;
+                    btnText.textContent = 'Enviar Mensaje';
+                    alert('Error al enviar. Inténtalo de nuevo o llámanos al +34 675 128 916.');
+                });
+        });
+    </script>
+
+    <script src="translations-pages.js"></script>
+
+</body>
+
+</html>
