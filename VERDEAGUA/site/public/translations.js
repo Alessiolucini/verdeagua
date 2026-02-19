@@ -42,11 +42,11 @@ const translations = {
         it: "Trasformiamo la tua proprietà in un paradiso mediterraneo"
     },
     "hero.subtitle": {
-        es: "Servicios exclusivos de paisajismo y mantenimiento integral en Mallorca. Calidad superior para las propiedades más exigentes del archipiélago.",
-        en: "Exclusive landscaping and comprehensive maintenance services in Mallorca. Superior quality for the most demanding properties in the archipelago.",
-        de: "Exklusive Landschaftsgestaltung und umfassende Wartungsdienste auf Mallorca. Höchste Qualität für die anspruchsvollsten Immobilien des Archipels.",
-        fr: "Services exclusifs d'aménagement paysager et d'entretien intégral à Majorque. Qualité supérieure pour les propriétés les plus exigeantes de l'archipel.",
-        it: "Servizi esclusivi di paesaggismo e manutenzione integrale a Maiorca. Qualità superiore per le proprietà più esigenti dell'arcipelago."
+        es: "Servicios de jardinería y mantenimiento integral en Mallorca. Calidad y cercanía para tu propiedad.",
+        en: "Gardening and comprehensive maintenance services in Mallorca. Quality and closeness for your property.",
+        de: "Gartenpflege und umfassende Wartungsdienste auf Mallorca. Qualität und Nähe für Ihre Immobilie.",
+        fr: "Services de jardinage et d'entretien intégral à Majorque. Qualité et proximité pour votre propriété.",
+        it: "Servizi di giardinaggio e manutenzione integrale a Maiorca. Qualità e vicinanza per la tua proprietà."
     },
     "hero.cta1": { es: "Solicitar Presupuesto", en: "Request a Quote", de: "Angebot anfordern", fr: "Demander un devis", it: "Richiedi un preventivo" },
     "hero.cta2": { es: "Ver Proyectos", en: "View Projects", de: "Projekte ansehen", fr: "Voir les projets", it: "Vedi i progetti" },
@@ -140,10 +140,10 @@ const translations = {
         fr: "Un aperçu de certaines des transformations les plus exclusives réalisées à Deià, Sóller, Andratx et Calvià.",
         it: "Uno sguardo ad alcune delle trasformazioni più esclusive realizzate a Deià, Sóller, Andratx e Calvià."
     },
-    "portfolio.p1.sub": { es: "Paisajismo y Piscina", en: "Landscaping & Pool", de: "Landschaftsgestaltung & Pool", fr: "Paysagisme & Piscine", it: "Paesaggismo e Piscina" },
+    "portfolio.p1.sub": { es: "Jardinería y Piscina", en: "Gardening & Pool", de: "Gartenpflege & Pool", fr: "Jardinage & Piscine", it: "Giardinaggio e Piscina" },
     "portfolio.p2.sub": { es: "Mantenimiento Integral", en: "Full Maintenance", de: "Komplette Wartung", fr: "Entretien intégral", it: "Manutenzione integrale" },
     "portfolio.p3.sub": { es: "Reforma Exterior", en: "Exterior Renovation", de: "Außenrenovierung", fr: "Rénovation extérieure", it: "Ristrutturazione esterna" },
-    "portfolio.p4.sub": { es: "Paisajismo de Vanguardia", en: "Avant-garde Landscaping", de: "Avantgarde-Gestaltung", fr: "Paysagisme d'avant-garde", it: "Paesaggismo d'avanguardia" },
+    "portfolio.p4.sub": { es: "Diseño de Jardín", en: "Garden Design", de: "Gartengestaltung", fr: "Design de jardin", it: "Design del giardino" },
     "portfolio.p5.sub": { es: "Renovación Histórica", en: "Historic Renovation", de: "Historische Renovierung", fr: "Rénovation historique", it: "Ristrutturazione storica" },
 
     // ── Pricing ──
@@ -208,7 +208,7 @@ const translations = {
         it: "Eccellenza nei servizi per proprietà di lusso. Specialisti nella manutenzione dei giardini e delle ville più esclusive di Maiorca."
     },
     "footer.services": { es: "Servicios", en: "Services", de: "Dienste", fr: "Services", it: "Servizi" },
-    "footer.svc.1": { es: "Paisajismo & Jardín", en: "Landscaping & Garden", de: "Landschaftsbau & Garten", fr: "Paysagisme & Jardin", it: "Paesaggismo & Giardino" },
+    "footer.svc.1": { es: "Jardinería & Jardín", en: "Gardening & Garden", de: "Gartenpflege & Garten", fr: "Jardinage & Jardin", it: "Giardinaggio & Giardino" },
     "footer.svc.2": { es: "Cuidado de Piscinas", en: "Pool Care", de: "Poolpflege", fr: "Entretien piscines", it: "Cura piscine" },
     "footer.svc.3": { es: "Reformas y Albañilería", en: "Renovations & Masonry", de: "Renovierungen & Mauerarbeit", fr: "Rénovations & Maçonnerie", it: "Ristrutturazioni & Muratura" },
     "footer.svc.4": { es: "Gestión de Propiedades", en: "Property Management", de: "Immobilienverwaltung", fr: "Gestion de propriétés", it: "Gestione proprietà" },
