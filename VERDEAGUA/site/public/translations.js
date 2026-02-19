@@ -72,11 +72,11 @@ const translations = {
     "svc.3.price": { es: "Presupuesto Personalizado", en: "Custom Quote", de: "Individuelles Angebot", fr: "Devis personnalisé", it: "Preventivo personalizzato" },
     "svc.4.title": { es: "Mantenimiento", en: "Maintenance", de: "Wartung", fr: "Entretien", it: "Manutenzione" },
     "svc.4.desc": {
-        es: "Cuidado integral de su propiedad 365 días al año: jardinería, piscina, limpieza, gestión de llaves y atención de emergencias.",
-        en: "Comprehensive property care 365 days a year: gardening, pool, cleaning, key management and emergency response.",
-        de: "Umfassende Immobilienbetreuung 365 Tage im Jahr: Gartenpflege, Pool, Reinigung, Schlüsselverwaltung und Notfalldienst.",
-        fr: "Entretien complet de votre propriété 365 jours par an : jardinage, piscine, nettoyage, gestion des clés et intervention d'urgence.",
-        it: "Cura integrale della tua proprietà 365 giorni l'anno: giardinaggio, piscina, pulizia, gestione chiavi e assistenza emergenze."
+        es: "Cuidado integral de su propiedad 365 días al año: jardinería, piscina, limpieza y atención de emergencias.",
+        en: "Comprehensive property care 365 days a year: gardening, pool, cleaning and emergency response.",
+        de: "Umfassende Immobilienbetreuung 365 Tage im Jahr: Gartenpflege, Pool, Reinigung und Notfalldienst.",
+        fr: "Entretien complet de votre propriété 365 jours par an : jardinage, piscine, nettoyage et intervention d'urgence.",
+        it: "Cura integrale della tua proprietà 365 giorni l'anno: giardinaggio, piscina, pulizia e assistenza emergenze."
     },
     "svc.4.price": { es: "Desde 250€", en: "From 250€", de: "Ab 250€", fr: "Dès 250€", it: "Da 250€" },
     "svc.cta": { es: "Solicitar Presupuesto", en: "Request Quote", de: "Angebot anfordern", fr: "Demander un devis", it: "Richiedi Preventivo" },
