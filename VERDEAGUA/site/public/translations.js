@@ -52,12 +52,14 @@ const translations = {
     "hero.cta2": { es: "Ver Proyectos", en: "View Projects", de: "Projekte ansehen", fr: "Voir les projets", it: "Vedi i progetti" },
 
     // ── Trust Badges ──
-    "badge.1.title": { es: "Equipo Experto", en: "Expert Team", de: "Expertenteam", fr: "Équipe experte", it: "Team di esperti" },
-    "badge.1.sub": { es: "Profesionales Cualificados", en: "Qualified Professionals", de: "Qualifizierte Fachleute", fr: "Professionnels qualifiés", it: "Professionisti qualificati" },
-    "badge.2.sub": { es: "Servicio Integral", en: "Full Service", de: "Komplettservice", fr: "Service intégral", it: "Servizio integrale" },
-    "badge.3.title": { es: "Garantía", en: "Guarantee", de: "Garantie", fr: "Garantie", it: "Garanzia" },
-    "badge.3.sub": { es: "Calidad Asegurada", en: "Assured Quality", de: "Gesicherte Qualität", fr: "Qualité assurée", it: "Qualità assicurata" },
-    "badge.4.sub": { es: "Cobertura Completa", en: "Full Coverage", de: "Vollständige Abdeckung", fr: "Couverture complète", it: "Copertura completa" },
+    "trust.1.title": { es: "10+ Años", en: "10+ Years", de: "10+ Jahre", fr: "10+ Ans", it: "10+ Anni" },
+    "trust.1.sub": { es: "Experiencia en el Sector", en: "Industry Experience", de: "Branchenerfahrung", fr: "Expérience dans le secteur", it: "Esperienza nel settore" },
+    "trust.2.title": { es: "Zona Poniente", en: "West Zone", de: "Westzone", fr: "Zone Ouest", it: "Zona Ponente" },
+    "trust.2.sub": { es: "Centro-Sur de Mallorca", en: "Central-South Mallorca", de: "Zentral-Süd Mallorca", fr: "Centre-Sud de Majorque", it: "Centro-Sud di Maiorca" },
+    "trust.3.title": { es: "Compromiso", en: "Commitment", de: "Engagement", fr: "Engagement", it: "Impegno" },
+    "trust.3.sub": { es: "Atención Personalizada", en: "Personalized Attention", de: "Persönliche Betreuung", fr: "Attention personnalisée", it: "Attenzione personalizzata" },
+    "trust.4.title": { es: "Mallorca", en: "Mallorca", de: "Mallorca", fr: "Majorque", it: "Maiorca" },
+    "trust.4.sub": { es: "Servicio Local", en: "Local Service", de: "Lokaler Service", fr: "Service local", it: "Servizio locale" },
 
     // ── Services Section ──
     "services.title": { es: "Nuestros Servicios", en: "Our Services", de: "Unsere Dienste", fr: "Nos services", it: "I nostri servizi" },
