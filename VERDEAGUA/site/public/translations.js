@@ -4,9 +4,34 @@
 const translations = {
     // ── Navigation ──
     "nav.servicios": { es: "Servicios", en: "Services", de: "Dienste", fr: "Services", it: "Servizi" },
+    "nav.nosotros": { es: "Sobre Nosotros", en: "About Us", de: "Über uns", fr: "À propos", it: "Chi siamo" },
     "nav.presupuesto": { es: "Presupuesto", en: "Quote", de: "Angebot", fr: "Devis", it: "Preventivo" },
     "nav.contacto": { es: "Contacto", en: "Contact", de: "Kontakt", fr: "Contact", it: "Contatto" },
     "nav.cta": { es: "Solicitar Presupuesto", en: "Request a Quote", de: "Angebot anfordern", fr: "Demander un devis", it: "Richiedi un preventivo" },
+
+    // ── About Us ──
+    "about.title": { es: "Sobre Nosotros", en: "About Us", de: "Über uns", fr: "À propos de nous", it: "Chi siamo" },
+    "about.years": { es: "Años de experiencia", en: "Years of experience", de: "Jahre Erfahrung", fr: "Ans d'expérience", it: "Anni di esperienza" },
+    "about.intro": {
+        es: "Soy Sebastian Yarzon, fundador de VerdeAgua. Con más de 10 años de experiencia en el cuidado de propiedades en Mallorca, conozco cada rincón de esta isla y entiendo lo que tu hogar necesita para lucir siempre perfecto.",
+        en: "I'm Sebastian Yarzon, founder of VerdeAgua. With over 10 years of experience in property care in Mallorca, I know every corner of this island and understand what your home needs to always look perfect.",
+        de: "Ich bin Sebastian Yarzon, Gründer von VerdeAgua. Mit über 10 Jahren Erfahrung in der Immobilienpflege auf Mallorca kenne ich jeden Winkel dieser Insel und verstehe, was Ihr Zuhause braucht, um immer perfekt auszusehen.",
+        fr: "Je suis Sebastian Yarzon, fondateur de VerdeAgua. Avec plus de 10 ans d'expérience dans l'entretien de propriétés à Majorque, je connais chaque recoin de cette île et comprends ce dont votre maison a besoin pour être toujours parfaite.",
+        it: "Sono Sebastian Yarzon, fondatore di VerdeAgua. Con oltre 10 anni di esperienza nella cura di proprietà a Maiorca, conosco ogni angolo di quest'isola e capisco cosa serve alla tua casa per essere sempre perfetta."
+    },
+    "about.desc": {
+        es: "Trabajamos principalmente en la zona centro-sur y poniente de Mallorca — desde Palma hasta Calvià, Andratx y Santa Ponça. Nuestro equipo trata cada propiedad como si fuera propia: con cercanía, responsabilidad y la atención al detalle que solo da la experiencia sobre el terreno.",
+        en: "We work mainly in the center-south and Poniente area of Mallorca — from Palma to Calvià, Andratx and Santa Ponça. Our team treats every property as if it were our own: with closeness, responsibility and the attention to detail that only comes from hands-on experience.",
+        de: "Wir arbeiten hauptsächlich im Zentrum-Süden und Poniente von Mallorca — von Palma bis Calvià, Andratx und Santa Ponça. Unser Team behandelt jede Immobilie wie seine eigene: mit Nähe, Verantwortung und der Liebe zum Detail, die nur aus praktischer Erfahrung entsteht.",
+        fr: "Nous travaillons principalement dans la zone centre-sud et poniente de Majorque — de Palma à Calvià, Andratx et Santa Ponça. Notre équipe traite chaque propriété comme la sienne : avec proximité, responsabilité et l'attention aux détails que seule l'expérience du terrain apporte.",
+        it: "Lavoriamo principalmente nella zona centro-sud e poniente di Maiorca — da Palma a Calvià, Andratx e Santa Ponça. Il nostro team tratta ogni proprietà come se fosse la propria: con vicinanza, responsabilità e l'attenzione ai dettagli che solo l'esperienza sul campo può dare."
+    },
+    "about.zone.label": { es: "Zona", en: "Area", de: "Gebiet", fr: "Zone", it: "Zona" },
+    "about.zone": { es: "Poniente & Centro-Sur", en: "Poniente & Center-South", de: "Poniente & Zentrum-Süd", fr: "Poniente & Centre-Sud", it: "Poniente & Centro-Sud" },
+    "about.team.label": { es: "Equipo", en: "Team", de: "Team", fr: "Équipe", it: "Team" },
+    "about.team": { es: "Profesionales locales", en: "Local professionals", de: "Lokale Fachleute", fr: "Professionnels locaux", it: "Professionisti locali" },
+    "about.value.label": { es: "Valores", en: "Values", de: "Werte", fr: "Valeurs", it: "Valori" },
+    "about.value": { es: "Cercanía y confianza", en: "Closeness & trust", de: "Nähe & Vertrauen", fr: "Proximité & confiance", it: "Vicinanza e fiducia" },
 
     // ── Hero ──
     "hero.title": {
