@@ -378,12 +378,43 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
             <h2 class="serif-text text-2xl sm:text-3xl font-bold text-primary text-center mb-8"
                 data-i18n="contact.map.title">Nuestra zona de cobertura</h2>
-            <div class="rounded-2xl overflow-hidden shadow-lg border border-primary/5 h-[300px] sm:h-[400px]">
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d98000!2d2.5!3d39.55!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x129793280b1e7c51%3A0x400f3a2d50571e0!2sCalvi%C3%A0%2C%20Illes%20Balears%2C%20Spain!5e0!3m2!1ses!2ses!4v1708000000000!5m2!1ses!2ses"
-                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
+            <div id="coverageMap"
+                class="rounded-2xl overflow-hidden shadow-lg border border-primary/5 h-[300px] sm:h-[400px]"></div>
+            <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+            <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+            <script>
+                document.addEventListener('DOMContentLoaded', function () {
+                    var map = L.map('coverageMap', { scrollWheelZoom: false }).setView([39.57, 2.48], 11);
+                    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                        attribution: '© OpenStreetMap'
+                    }).addTo(map);
+
+                    // Zona Poniente polygon
+                    var zonaPoniente = L.polygon([
+                        [39.72, 2.34],  // Nord Andratx
+                        [39.68, 2.50],  // Nord Calvià
+                        [39.63, 2.56],  // Son Vida
+                        [39.60, 2.57],  // Cala Major
+                        [39.52, 2.54],  // Palmanova / Magaluf
+                        [39.50, 2.47],  // Santa Ponça costa
+                        [39.49, 2.40],  // Peguera costa
+                        [39.52, 2.33],  // Port d'Andratx
+                        [39.55, 2.30],  // Sant Elm
+                        [39.62, 2.30],  // Andratx nord
+                    ], {
+                        color: '#2d5016',
+                        fillColor: '#2d5016',
+                        fillOpacity: 0.2,
+                        weight: 3
+                    }).addTo(map);
+
+                    zonaPoniente.bindPopup('<strong style="color:#2d5016;font-size:14px;">Zona Poniente</strong><br>Nuestra zona de servicio').openPopup();
+
+                    // Marker at Calvià center
+                    L.marker([39.565, 2.46]).addTo(map)
+                        .bindPopup('<strong style="color:#2d5016;">VerdeAgua</strong><br>Calvià, Mallorca');
+                });
+            </script>
         </div>
     </section>
 
