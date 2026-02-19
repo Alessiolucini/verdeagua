@@ -528,6 +528,18 @@
     </footer>
     <script>
             (function () {
+                // Auto-select service from URL parameter
+                const urlParams = new URLSearchParams(window.location.search);
+                const preselect = urlParams.get('servicio');
+                if (preselect) {
+                    document.querySelectorAll('.svc-checkbox').forEach(cb => {
+                        if (cb.dataset.name === preselect) {
+                            cb.checked = true;
+                            cb.dispatchEvent(new Event('change'));
+                        }
+                    });
+                }
+
                 let currentStep = 1;
                 const totalSteps = 4;
                 const stepDivs = [null, document.getElementById('step1'), document.getElementById('step2'), document.getElementById('step3'), document.getElementById('step4')];

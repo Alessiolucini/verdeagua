@@ -79,7 +79,7 @@ const translations = {
         it: "Cura totale della tua proprietà tutto l'anno, chiavi in mano e gestione emergenze."
     },
     "svc.4.price": { es: "Desde 250€", en: "From 250€", de: "Ab 250€", fr: "Dès 250€", it: "Da 250€" },
-    "svc.more": { es: "Saber más", en: "Learn more", de: "Mehr erfahren", fr: "En savoir plus", it: "Scopri di più" },
+    "svc.cta": { es: "Solicitar Presupuesto", en: "Request Quote", de: "Angebot anfordern", fr: "Demander un devis", it: "Richiedi Preventivo" },
 
     // ── Why VerdeAgua ──
     "why.title": {
