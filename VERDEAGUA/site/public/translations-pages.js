@@ -196,8 +196,8 @@ const pageTranslations = {
 // ── Language detection & application (same logic as index) ──
 (function () {
     function detectLang() {
-        const stored = localStorage.getItem('va_lang');
-        if (stored && ['es', 'en', 'de', 'fr', 'it'].includes(stored)) return stored;
+        const manual = localStorage.getItem('va_lang_manual');
+        if (manual && ['es', 'en', 'de', 'fr', 'it'].includes(manual)) return manual;
         const nav = (navigator.language || navigator.userLanguage || '').toLowerCase();
         if (nav.startsWith('de')) return 'de';
         if (nav.startsWith('en')) return 'en';
@@ -234,7 +234,7 @@ const pageTranslations = {
             }
         });
         document.documentElement.lang = lang;
-        localStorage.setItem('va_lang', lang);
+        localStorage.setItem('va_lang_manual', lang);
         // Highlight active flag
         document.querySelectorAll('.lang-flag').forEach(f => {
             f.style.opacity = f.dataset.lang === lang ? '1' : '0.4';

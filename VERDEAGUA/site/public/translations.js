@@ -259,14 +259,11 @@ const translations = {
 
 // ── Language detection & application ──
 (function () {
-    // Detect language: check localStorage first, then browser
-    const stored = localStorage.getItem('va_lang');
+    // Detect language: manual override > browser language > default 'es'
+    const manualLang = localStorage.getItem('va_lang_manual');
     const browserLang = (navigator.language || navigator.userLanguage || 'es').slice(0, 2).toLowerCase();
     const supported = ['es', 'en', 'de', 'fr', 'it'];
-    const lang = stored || (supported.includes(browserLang) ? browserLang : 'es');
-
-    // Store detected language
-    if (!stored) localStorage.setItem('va_lang', lang);
+    const lang = (manualLang && supported.includes(manualLang)) ? manualLang : (supported.includes(browserLang) ? browserLang : 'es');
 
     // Set HTML lang attribute
     document.documentElement.lang = lang;
@@ -303,7 +300,7 @@ const translations = {
 
     // Expose function for manual language switching
     window.switchLanguage = function (newLang) {
-        localStorage.setItem('va_lang', newLang);
+        localStorage.setItem('va_lang_manual', newLang);
         applyTranslations(newLang);
         document.documentElement.lang = newLang;
     };
