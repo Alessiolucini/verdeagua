@@ -72,11 +72,11 @@ const translations = {
     },
     "svc.1.title": { es: "Jardinería", en: "Gardening", de: "Gartenpflege", fr: "Jardinage", it: "Giardinaggio" },
     "svc.1.desc": {
-        es: "Diseño, creación y mantenimiento integral de jardines, poda de altura y sistemas de riego.",
-        en: "Design, creation and comprehensive garden maintenance, height pruning and irrigation systems.",
-        de: "Gestaltung, Anlage und umfassende Gartenpflege, Baumschnitt und Bewässerungssysteme.",
-        fr: "Conception, création et entretien intégral des jardins, taille en hauteur et systèmes d'irrigation.",
-        it: "Progettazione, creazione e manutenzione integrale dei giardini, potatura in altezza e sistemi di irrigazione."
+        es: "Mantenimiento integral de jardines, poda de altura y sistemas de riego.",
+        en: "Comprehensive garden maintenance, height pruning and irrigation systems.",
+        de: "Umfassende Gartenpflege, Baumschnitt und Bewässerungssysteme.",
+        fr: "Entretien intégral des jardins, taille en hauteur et systèmes d'irrigation.",
+        it: "Manutenzione integrale dei giardini, potatura in altezza e sistemi di irrigazione."
     },
     "svc.1.price": { es: "Desde 80€", en: "From 80€", de: "Ab 80€", fr: "Dès 80€", it: "Da 80€" },
     "svc.2.title": { es: "Mantenimiento de Piscinas", en: "Pool Maintenance", de: "Poolpflege", fr: "Entretien de piscines", it: "Manutenzione piscine" },
